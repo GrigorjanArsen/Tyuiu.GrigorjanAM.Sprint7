@@ -49,6 +49,21 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
                         dataGridViewBase_GAM.Rows[i-1].Cells[j-1].Selected = false;
                     }
                 }
+
+                DataGridViewCellStyle headerstyle = new DataGridViewCellStyle();
+                headerstyle.Alignment = DataGridViewContentAlignment.MiddleCenter; 
+                headerstyle.Font = new Font("Arial", 10, FontStyle.Bold);
+                foreach (DataGridViewColumn column in dataGridViewBase_GAM.Columns)
+                {
+                    column.HeaderCell.Style = headerstyle;
+                }
+
+                DataGridViewCellStyle rowHeaderStyle = new DataGridViewCellStyle();
+                rowHeaderStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; 
+                rowHeaderStyle.Font = new Font("Arial", 10, FontStyle.Bold);
+                dataGridViewBase_GAM.RowHeadersDefaultCellStyle = rowHeaderStyle;
+                dataGridViewBase_GAM.RowHeadersWidth = 75;
+
                 for (int i = 0; i < rows-1; i++)
                 {
                     for (int j = 0; j < columns-1; j++)
@@ -61,7 +76,28 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             }
             catch
             {
-                MessageBox.Show("Файл не выбран", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Возникла проблема с открытием файла", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonSave_GAM_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                saveFileDialogMain_GAM.FileName = ".csv";
+                saveFileDialogMain_GAM.InitialDirectory = @":C";
+                saveFileDialogMain_GAM.ShowDialog();
+                string path = saveFileDialogMain_GAM.FileName;
+                FileInfo fileInfo = new FileInfo(path);
+                bool fileExists = fileInfo.Exists;
+                if (fileExists)
+                {
+                    File.Delete(path);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Не удалось сохранить файл", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
