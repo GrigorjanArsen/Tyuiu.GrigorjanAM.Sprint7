@@ -32,6 +32,16 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.openFileDialogMain_GAM = new System.Windows.Forms.OpenFileDialog();
             this.panelUpper_GAM = new System.Windows.Forms.Panel();
+            this.buttonReset_GAM = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.сортировкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.столбецВесToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.столбецIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.поУбываниюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.столбецДлительностьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.столбецВесToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.столбецДатаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBoxAbout_GAM = new System.Windows.Forms.PictureBox();
             this.pictureBoxSave_GAM = new System.Windows.Forms.PictureBox();
             this.pictureBoxManagement_GAM = new System.Windows.Forms.PictureBox();
@@ -41,24 +51,27 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             this.buttonManagement_GAM = new System.Windows.Forms.Button();
             this.buttonLoad_GAM = new System.Windows.Forms.Button();
             this.panelDown_GAM = new System.Windows.Forms.Panel();
+            this.buttonUp_GAM = new System.Windows.Forms.Button();
+            this.buttonDown_GAM = new System.Windows.Forms.Button();
             this.buttonLeft_GAM = new System.Windows.Forms.Button();
             this.buttonRight_GAM = new System.Windows.Forms.Button();
+            this.buttonSearch_GAM = new System.Windows.Forms.Button();
+            this.pictureBoxSearch_GAM = new System.Windows.Forms.PictureBox();
             this.buttonFilter_GAM = new System.Windows.Forms.Button();
             this.pictureBoxFilter_GAM = new System.Windows.Forms.PictureBox();
-            this.buttonSort_GAM = new System.Windows.Forms.Button();
-            this.pictureBoxSort_GAM = new System.Windows.Forms.PictureBox();
             this.panelMiddle_GAM = new System.Windows.Forms.Panel();
             this.groupBoxBase_GAM = new System.Windows.Forms.GroupBox();
             this.dataGridViewBase_GAM = new System.Windows.Forms.DataGridView();
             this.saveFileDialogMain_GAM = new System.Windows.Forms.SaveFileDialog();
             this.panelUpper_GAM.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAbout_GAM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSave_GAM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxManagement_GAM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoad_GAM)).BeginInit();
             this.panelDown_GAM.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSearch_GAM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFilter_GAM)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSort_GAM)).BeginInit();
             this.panelMiddle_GAM.SuspendLayout();
             this.groupBoxBase_GAM.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBase_GAM)).BeginInit();
@@ -71,6 +84,8 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             // panelUpper_GAM
             // 
             this.panelUpper_GAM.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panelUpper_GAM.Controls.Add(this.buttonReset_GAM);
+            this.panelUpper_GAM.Controls.Add(this.menuStrip1);
             this.panelUpper_GAM.Controls.Add(this.pictureBoxAbout_GAM);
             this.panelUpper_GAM.Controls.Add(this.pictureBoxSave_GAM);
             this.panelUpper_GAM.Controls.Add(this.pictureBoxManagement_GAM);
@@ -82,8 +97,92 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             this.panelUpper_GAM.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelUpper_GAM.Location = new System.Drawing.Point(0, 0);
             this.panelUpper_GAM.Name = "panelUpper_GAM";
-            this.panelUpper_GAM.Size = new System.Drawing.Size(804, 49);
+            this.panelUpper_GAM.Size = new System.Drawing.Size(804, 84);
             this.panelUpper_GAM.TabIndex = 0;
+            // 
+            // buttonReset_GAM
+            // 
+            this.buttonReset_GAM.Location = new System.Drawing.Point(243, 55);
+            this.buttonReset_GAM.Name = "buttonReset_GAM";
+            this.buttonReset_GAM.Size = new System.Drawing.Size(29, 29);
+            this.buttonReset_GAM.TabIndex = 4;
+            this.buttonReset_GAM.UseVisualStyleBackColor = true;
+            this.buttonReset_GAM.Click += new System.EventHandler(this.buttonReset_GAM_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.поУбываниюToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(3, 57);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(214, 24);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.сортировкаToolStripMenuItem,
+            this.столбецВесToolStripMenuItem,
+            this.столбецIDToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(110, 20);
+            this.toolStripMenuItem1.Text = "По возрастанию";
+            // 
+            // сортировкаToolStripMenuItem
+            // 
+            this.сортировкаToolStripMenuItem.Name = "сортировкаToolStripMenuItem";
+            this.сортировкаToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.сортировкаToolStripMenuItem.Text = "Столбец \"Длительность\"";
+            this.сортировкаToolStripMenuItem.Click += new System.EventHandler(this.сортировкаToolStripMenuItem_Click_1);
+            // 
+            // столбецВесToolStripMenuItem
+            // 
+            this.столбецВесToolStripMenuItem.Name = "столбецВесToolStripMenuItem";
+            this.столбецВесToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.столбецВесToolStripMenuItem.Text = "Столбец \"Вес\"";
+            this.столбецВесToolStripMenuItem.Click += new System.EventHandler(this.столбецВесToolStripMenuItem_Click);
+            // 
+            // столбецIDToolStripMenuItem
+            // 
+            this.столбецIDToolStripMenuItem.Name = "столбецIDToolStripMenuItem";
+            this.столбецIDToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.столбецIDToolStripMenuItem.Text = "Столбец \"ID\"";
+            this.столбецIDToolStripMenuItem.Click += new System.EventHandler(this.столбецIDToolStripMenuItem_Click);
+            // 
+            // поУбываниюToolStripMenuItem
+            // 
+            this.поУбываниюToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.столбецДлительностьToolStripMenuItem,
+            this.столбецВесToolStripMenuItem1,
+            this.столбецДатаToolStripMenuItem1});
+            this.поУбываниюToolStripMenuItem.Name = "поУбываниюToolStripMenuItem";
+            this.поУбываниюToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
+            this.поУбываниюToolStripMenuItem.Text = "По убыванию";
+            // 
+            // столбецДлительностьToolStripMenuItem
+            // 
+            this.столбецДлительностьToolStripMenuItem.Name = "столбецДлительностьToolStripMenuItem";
+            this.столбецДлительностьToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.столбецДлительностьToolStripMenuItem.Text = "Столбец \"Длительность\"";
+            this.столбецДлительностьToolStripMenuItem.Click += new System.EventHandler(this.столбецДлительностьToolStripMenuItem_Click);
+            // 
+            // столбецВесToolStripMenuItem1
+            // 
+            this.столбецВесToolStripMenuItem1.Name = "столбецВесToolStripMenuItem1";
+            this.столбецВесToolStripMenuItem1.Size = new System.Drawing.Size(211, 22);
+            this.столбецВесToolStripMenuItem1.Text = "Столбец \"Вес\"";
+            this.столбецВесToolStripMenuItem1.Click += new System.EventHandler(this.столбецВесToolStripMenuItem1_Click);
+            // 
+            // столбецДатаToolStripMenuItem1
+            // 
+            this.столбецДатаToolStripMenuItem1.Name = "столбецДатаToolStripMenuItem1";
+            this.столбецДатаToolStripMenuItem1.Size = new System.Drawing.Size(211, 22);
+            this.столбецДатаToolStripMenuItem1.Text = "Столбец \"ID\"";
+            this.столбецДатаToolStripMenuItem1.Click += new System.EventHandler(this.столбецДатаToolStripMenuItem1_Click);
             // 
             // pictureBoxAbout_GAM
             // 
@@ -94,7 +193,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             this.pictureBoxAbout_GAM.ErrorImage = null;
             this.pictureBoxAbout_GAM.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxAbout_GAM.Image")));
             this.pictureBoxAbout_GAM.InitialImage = null;
-            this.pictureBoxAbout_GAM.Location = new System.Drawing.Point(686, 6);
+            this.pictureBoxAbout_GAM.Location = new System.Drawing.Point(678, 6);
             this.pictureBoxAbout_GAM.Name = "pictureBoxAbout_GAM";
             this.pictureBoxAbout_GAM.Size = new System.Drawing.Size(34, 34);
             this.pictureBoxAbout_GAM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -125,7 +224,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             this.pictureBoxManagement_GAM.ErrorImage = null;
             this.pictureBoxManagement_GAM.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxManagement_GAM.Image")));
             this.pictureBoxManagement_GAM.InitialImage = null;
-            this.pictureBoxManagement_GAM.Location = new System.Drawing.Point(554, 6);
+            this.pictureBoxManagement_GAM.Location = new System.Drawing.Point(546, 6);
             this.pictureBoxManagement_GAM.Name = "pictureBoxManagement_GAM";
             this.pictureBoxManagement_GAM.Size = new System.Drawing.Size(34, 34);
             this.pictureBoxManagement_GAM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -150,12 +249,13 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             // buttonAbout_GAM
             // 
             this.buttonAbout_GAM.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonAbout_GAM.Location = new System.Drawing.Point(726, 6);
+            this.buttonAbout_GAM.Location = new System.Drawing.Point(718, 6);
             this.buttonAbout_GAM.Name = "buttonAbout_GAM";
             this.buttonAbout_GAM.Size = new System.Drawing.Size(75, 34);
             this.buttonAbout_GAM.TabIndex = 0;
             this.buttonAbout_GAM.Text = "О программе";
             this.buttonAbout_GAM.UseVisualStyleBackColor = true;
+            this.buttonAbout_GAM.Click += new System.EventHandler(this.buttonAbout_GAM_Click);
             // 
             // buttonSave_GAM
             // 
@@ -170,7 +270,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             // buttonManagement_GAM
             // 
             this.buttonManagement_GAM.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonManagement_GAM.Location = new System.Drawing.Point(594, 6);
+            this.buttonManagement_GAM.Location = new System.Drawing.Point(586, 6);
             this.buttonManagement_GAM.Name = "buttonManagement_GAM";
             this.buttonManagement_GAM.Size = new System.Drawing.Size(86, 34);
             this.buttonManagement_GAM.TabIndex = 0;
@@ -190,17 +290,48 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             // panelDown_GAM
             // 
             this.panelDown_GAM.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panelDown_GAM.Controls.Add(this.buttonUp_GAM);
+            this.panelDown_GAM.Controls.Add(this.buttonDown_GAM);
             this.panelDown_GAM.Controls.Add(this.buttonLeft_GAM);
             this.panelDown_GAM.Controls.Add(this.buttonRight_GAM);
+            this.panelDown_GAM.Controls.Add(this.buttonSearch_GAM);
+            this.panelDown_GAM.Controls.Add(this.pictureBoxSearch_GAM);
             this.panelDown_GAM.Controls.Add(this.buttonFilter_GAM);
             this.panelDown_GAM.Controls.Add(this.pictureBoxFilter_GAM);
-            this.panelDown_GAM.Controls.Add(this.buttonSort_GAM);
-            this.panelDown_GAM.Controls.Add(this.pictureBoxSort_GAM);
             this.panelDown_GAM.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelDown_GAM.Location = new System.Drawing.Point(0, 412);
             this.panelDown_GAM.Name = "panelDown_GAM";
             this.panelDown_GAM.Size = new System.Drawing.Size(804, 49);
             this.panelDown_GAM.TabIndex = 1;
+            // 
+            // buttonUp_GAM
+            // 
+            this.buttonUp_GAM.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.buttonUp_GAM.BackColor = System.Drawing.Color.Transparent;
+            this.buttonUp_GAM.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUp_GAM.BackgroundImage")));
+            this.buttonUp_GAM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonUp_GAM.FlatAppearance.BorderSize = 0;
+            this.buttonUp_GAM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUp_GAM.Location = new System.Drawing.Point(638, 6);
+            this.buttonUp_GAM.Name = "buttonUp_GAM";
+            this.buttonUp_GAM.Size = new System.Drawing.Size(34, 34);
+            this.buttonUp_GAM.TabIndex = 0;
+            this.buttonUp_GAM.UseVisualStyleBackColor = false;
+            this.buttonUp_GAM.Click += new System.EventHandler(this.buttonUp_GAM_Click);
+            // 
+            // buttonDown_GAM
+            // 
+            this.buttonDown_GAM.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.buttonDown_GAM.BackColor = System.Drawing.Color.Transparent;
+            this.buttonDown_GAM.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDown_GAM.BackgroundImage")));
+            this.buttonDown_GAM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonDown_GAM.FlatAppearance.BorderSize = 0;
+            this.buttonDown_GAM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDown_GAM.Location = new System.Drawing.Point(678, 6);
+            this.buttonDown_GAM.Name = "buttonDown_GAM";
+            this.buttonDown_GAM.Size = new System.Drawing.Size(34, 34);
+            this.buttonDown_GAM.TabIndex = 0;
+            this.buttonDown_GAM.UseVisualStyleBackColor = false;
             // 
             // buttonLeft_GAM
             // 
@@ -230,9 +361,34 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             this.buttonRight_GAM.TabIndex = 0;
             this.buttonRight_GAM.UseVisualStyleBackColor = false;
             // 
+            // buttonSearch_GAM
+            // 
+            this.buttonSearch_GAM.Location = new System.Drawing.Point(164, 6);
+            this.buttonSearch_GAM.Name = "buttonSearch_GAM";
+            this.buttonSearch_GAM.Size = new System.Drawing.Size(75, 34);
+            this.buttonSearch_GAM.TabIndex = 0;
+            this.buttonSearch_GAM.Text = "Поиск";
+            this.buttonSearch_GAM.UseVisualStyleBackColor = true;
+            this.buttonSearch_GAM.Click += new System.EventHandler(this.buttonSearch_GAM_Click);
+            // 
+            // pictureBoxSearch_GAM
+            // 
+            this.pictureBoxSearch_GAM.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxSearch_GAM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBoxSearch_GAM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxSearch_GAM.ErrorImage = null;
+            this.pictureBoxSearch_GAM.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSearch_GAM.Image")));
+            this.pictureBoxSearch_GAM.InitialImage = null;
+            this.pictureBoxSearch_GAM.Location = new System.Drawing.Point(124, 6);
+            this.pictureBoxSearch_GAM.Name = "pictureBoxSearch_GAM";
+            this.pictureBoxSearch_GAM.Size = new System.Drawing.Size(34, 34);
+            this.pictureBoxSearch_GAM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxSearch_GAM.TabIndex = 1;
+            this.pictureBoxSearch_GAM.TabStop = false;
+            // 
             // buttonFilter_GAM
             // 
-            this.buttonFilter_GAM.Location = new System.Drawing.Point(162, 6);
+            this.buttonFilter_GAM.Location = new System.Drawing.Point(43, 6);
             this.buttonFilter_GAM.Name = "buttonFilter_GAM";
             this.buttonFilter_GAM.Size = new System.Drawing.Size(75, 34);
             this.buttonFilter_GAM.TabIndex = 0;
@@ -247,45 +403,21 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             this.pictureBoxFilter_GAM.ErrorImage = null;
             this.pictureBoxFilter_GAM.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxFilter_GAM.Image")));
             this.pictureBoxFilter_GAM.InitialImage = null;
-            this.pictureBoxFilter_GAM.Location = new System.Drawing.Point(122, 6);
+            this.pictureBoxFilter_GAM.Location = new System.Drawing.Point(3, 6);
             this.pictureBoxFilter_GAM.Name = "pictureBoxFilter_GAM";
             this.pictureBoxFilter_GAM.Size = new System.Drawing.Size(34, 34);
             this.pictureBoxFilter_GAM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxFilter_GAM.TabIndex = 1;
             this.pictureBoxFilter_GAM.TabStop = false;
             // 
-            // buttonSort_GAM
-            // 
-            this.buttonSort_GAM.Location = new System.Drawing.Point(43, 6);
-            this.buttonSort_GAM.Name = "buttonSort_GAM";
-            this.buttonSort_GAM.Size = new System.Drawing.Size(75, 34);
-            this.buttonSort_GAM.TabIndex = 0;
-            this.buttonSort_GAM.Text = "Сортировка";
-            this.buttonSort_GAM.UseVisualStyleBackColor = true;
-            // 
-            // pictureBoxSort_GAM
-            // 
-            this.pictureBoxSort_GAM.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxSort_GAM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBoxSort_GAM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxSort_GAM.ErrorImage = null;
-            this.pictureBoxSort_GAM.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSort_GAM.Image")));
-            this.pictureBoxSort_GAM.InitialImage = null;
-            this.pictureBoxSort_GAM.Location = new System.Drawing.Point(3, 6);
-            this.pictureBoxSort_GAM.Name = "pictureBoxSort_GAM";
-            this.pictureBoxSort_GAM.Size = new System.Drawing.Size(34, 34);
-            this.pictureBoxSort_GAM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxSort_GAM.TabIndex = 1;
-            this.pictureBoxSort_GAM.TabStop = false;
-            // 
             // panelMiddle_GAM
             // 
             this.panelMiddle_GAM.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panelMiddle_GAM.Controls.Add(this.groupBoxBase_GAM);
             this.panelMiddle_GAM.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMiddle_GAM.Location = new System.Drawing.Point(0, 49);
+            this.panelMiddle_GAM.Location = new System.Drawing.Point(0, 84);
             this.panelMiddle_GAM.Name = "panelMiddle_GAM";
-            this.panelMiddle_GAM.Size = new System.Drawing.Size(804, 363);
+            this.panelMiddle_GAM.Size = new System.Drawing.Size(804, 328);
             this.panelMiddle_GAM.TabIndex = 2;
             // 
             // groupBoxBase_GAM
@@ -294,7 +426,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             this.groupBoxBase_GAM.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxBase_GAM.Location = new System.Drawing.Point(0, 0);
             this.groupBoxBase_GAM.Name = "groupBoxBase_GAM";
-            this.groupBoxBase_GAM.Size = new System.Drawing.Size(804, 363);
+            this.groupBoxBase_GAM.Size = new System.Drawing.Size(804, 328);
             this.groupBoxBase_GAM.TabIndex = 0;
             this.groupBoxBase_GAM.TabStop = false;
             this.groupBoxBase_GAM.Text = "Данные";
@@ -302,10 +434,12 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             // dataGridViewBase_GAM
             // 
             this.dataGridViewBase_GAM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewBase_GAM.ColumnHeadersVisible = false;
             this.dataGridViewBase_GAM.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewBase_GAM.Location = new System.Drawing.Point(3, 16);
             this.dataGridViewBase_GAM.Name = "dataGridViewBase_GAM";
-            this.dataGridViewBase_GAM.Size = new System.Drawing.Size(798, 344);
+            this.dataGridViewBase_GAM.RowHeadersVisible = false;
+            this.dataGridViewBase_GAM.Size = new System.Drawing.Size(798, 309);
             this.dataGridViewBase_GAM.TabIndex = 0;
             // 
             // FormMain
@@ -320,13 +454,16 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Каталог видеоклипов";
             this.panelUpper_GAM.ResumeLayout(false);
+            this.panelUpper_GAM.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAbout_GAM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSave_GAM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxManagement_GAM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoad_GAM)).EndInit();
             this.panelDown_GAM.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSearch_GAM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFilter_GAM)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSort_GAM)).EndInit();
             this.panelMiddle_GAM.ResumeLayout(false);
             this.groupBoxBase_GAM.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBase_GAM)).EndInit();
@@ -351,11 +488,23 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
         private System.Windows.Forms.Button buttonRight_GAM;
         private System.Windows.Forms.Button buttonFilter_GAM;
         private System.Windows.Forms.PictureBox pictureBoxFilter_GAM;
-        private System.Windows.Forms.Button buttonSort_GAM;
-        private System.Windows.Forms.PictureBox pictureBoxSort_GAM;
         private System.Windows.Forms.GroupBox groupBoxBase_GAM;
         private System.Windows.Forms.DataGridView dataGridViewBase_GAM;
         private System.Windows.Forms.SaveFileDialog saveFileDialogMain_GAM;
+        private System.Windows.Forms.Button buttonUp_GAM;
+        private System.Windows.Forms.Button buttonDown_GAM;
+        private System.Windows.Forms.Button buttonSearch_GAM;
+        private System.Windows.Forms.PictureBox pictureBoxSearch_GAM;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem сортировкаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem поУбываниюToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem столбецДлительностьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem столбецВесToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem столбецДатаToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem столбецIDToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem столбецВесToolStripMenuItem;
+        private System.Windows.Forms.Button buttonReset_GAM;
     }
 }
 

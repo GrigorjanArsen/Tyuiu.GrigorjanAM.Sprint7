@@ -19,7 +19,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             InitializeComponent();
         }
         DataService ds = new DataService();
-
+        string path = @"C:\Users\djura\Desktop\DataSet.csv";
         static string openFile;
         static int rows;
         static int columns;
@@ -34,45 +34,22 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
                 matrix = ds.LoadDataSet(openFile);
                 rows = matrix.GetLength(0);
                 columns = matrix.GetLength(1);
-                dataGridViewBase_GAM.RowCount = 250;
-                dataGridViewBase_GAM.ColumnCount = 50;
+                dataGridViewBase_GAM.RowCount = rows;
+                dataGridViewBase_GAM.ColumnCount = columns;
 
+                
                 for (int i = 0; i < rows; i++)
                 {
-                    dataGridViewBase_GAM.Columns[i].Width = 135;
-                }
-                for (int i = 1; i < rows; i++)
-                {
-                    for (int j = 1; j < columns; j++)
+                    for (int j = 0; j < columns; j++)
                     {
-                        dataGridViewBase_GAM.Rows[i-1].Cells[j-1].Value = matrix[i, j];
-                        dataGridViewBase_GAM.Rows[i-1].Cells[j-1].Selected = false;
+                        dataGridViewBase_GAM.Rows[i].Cells[j].Value = matrix[i, j];
+                        dataGridViewBase_GAM.Rows[i].Cells[j].Selected = false;
                     }
                 }
+                dataGridViewBase_GAM.Columns[0].Width = 100;
+                dataGridViewBase_GAM.Columns[1].Width = 150;
+                dataGridViewBase_GAM.Columns[3].Width = 150;
 
-                DataGridViewCellStyle headerstyle = new DataGridViewCellStyle();
-                headerstyle.Alignment = DataGridViewContentAlignment.MiddleCenter; 
-                headerstyle.Font = new Font("Arial", 10, FontStyle.Bold);
-                foreach (DataGridViewColumn column in dataGridViewBase_GAM.Columns)
-                {
-                    column.HeaderCell.Style = headerstyle;
-                }
-
-                DataGridViewCellStyle rowHeaderStyle = new DataGridViewCellStyle();
-                rowHeaderStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; 
-                rowHeaderStyle.Font = new Font("Arial", 10, FontStyle.Bold);
-                dataGridViewBase_GAM.RowHeadersDefaultCellStyle = rowHeaderStyle;
-                dataGridViewBase_GAM.RowHeadersWidth = 75;
-
-                for (int i = 0; i < rows-1; i++)
-                {
-                    for (int j = 0; j < columns-1; j++)
-                    {
-                        dataGridViewBase_GAM.Rows[i].HeaderCell.Value = matrix[i+1, 0];
-                        dataGridViewBase_GAM.Columns[j].HeaderCell.Value = matrix[0, j+1];
-                    }
-
-                }
             }
             catch
             {
@@ -84,21 +61,174 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
         {
             try
             {
-                saveFileDialogMain_GAM.FileName = ".csv";
-                saveFileDialogMain_GAM.InitialDirectory = @":C";
-                saveFileDialogMain_GAM.ShowDialog();
-                string path = saveFileDialogMain_GAM.FileName;
-                FileInfo fileInfo = new FileInfo(path);
-                bool fileExists = fileInfo.Exists;
-                if (fileExists)
+                saveFileDialogMain_GAM.FileName = "OutPutFileTask7.csv";
+                saveFileDialogMain_GAM.InitialDirectory = Directory.GetCurrentDirectory();
+
+                if (saveFileDialogMain_GAM.ShowDialog() == DialogResult.OK)
                 {
-                    File.Delete(path);
+                    string path = saveFileDialogMain_GAM.FileName;
+
+                    if (File.Exists(path))
+                    {
+                        File.Delete(path);
+                    }
+
+                    int rows = dataGridViewBase_GAM.RowCount;
+                    int columns = dataGridViewBase_GAM.ColumnCount;
+
+                    StringBuilder strBuilder = new StringBuilder();
+
+                    for (int i = 0; i < rows; i++)
+                    {
+                        for (int j = 0; j < columns; j++)
+                        {
+                            strBuilder.Append(dataGridViewBase_GAM.Rows[i].Cells[j].Value);
+
+                            if (j != columns - 1)
+                            {
+                                strBuilder.Append(";");
+                            }
+                        }
+
+                        strBuilder.AppendLine();
+                    }
+
+                    File.WriteAllText(path, strBuilder.ToString(), Encoding.UTF8);
+
+                    MessageBox.Show("Файл успешно сохранен", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Не удалось сохранить файл", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Не удалось сохранить файл. Ошибка: {ex.Message}", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+
+        private void buttonAbout_GAM_Click(object sender, EventArgs e)
+        {
+            FormAbout formAbout = new FormAbout();
+            formAbout.ShowDialog();
+        }
+
+        private void buttonSearch_GAM_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSort_GAM_Click(object sender, EventArgs e)
+        {
+            FormSort formsort = new FormSort();
+            formsort.ShowDialog();
+
+        }
+
+
+        private void сортировкаToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            string[,] mx = ds.LoadDataSet(path);
+            string[,] mxsort = ds.SortVozr(mx, 2);
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    dataGridViewBase_GAM.Rows[i].Cells[j].Value = mxsort[i, j];
+                }
+            }
+        }
+
+        private void столбецВесToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string[,] mx = ds.LoadDataSet(path);
+            string[,] mxsort = ds.SortVozr(mx, 5);
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    dataGridViewBase_GAM.Rows[i].Cells[j].Value = mxsort[i, j];
+                }
+            }
+        }
+
+
+        private void столбецIDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string[,] mx = ds.LoadDataSet(path);
+            string[,] mxsort = ds.SortVozr(mx, 0);
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    dataGridViewBase_GAM.Rows[i].Cells[j].Value = mxsort[i, j];
+                }
+            }
+        }
+
+        
+        private void buttonReset_GAM_Click(object sender, EventArgs e)
+        {
+            matrix = ds.LoadDataSet(path);
+            rows = matrix.GetLength(0);
+            columns = matrix.GetLength(1);
+            dataGridViewBase_GAM.RowCount = rows;
+            dataGridViewBase_GAM.ColumnCount = columns;
+
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    dataGridViewBase_GAM.Rows[i].Cells[j].Value = matrix[i, j];
+                    dataGridViewBase_GAM.Rows[i].Cells[j].Selected = false;
+                }
+            }
+            dataGridViewBase_GAM.Columns[0].Width = 100;
+            dataGridViewBase_GAM.Columns[1].Width = 150;
+            dataGridViewBase_GAM.Columns[3].Width = 150;
+        }
+
+        private void столбецДлительностьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string[,] mx = ds.LoadDataSet(path);
+            string[,] mxsort = ds.SortMax(mx, 2);
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    dataGridViewBase_GAM.Rows[i].Cells[j].Value = mxsort[i, j];
+                }
+            }
+        }
+
+        private void столбецВесToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            string[,] mx = ds.LoadDataSet(path);
+            string[,] mxsort = ds.SortMax(mx, 5);
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    dataGridViewBase_GAM.Rows[i].Cells[j].Value = mxsort[i, j];
+                }
+            }
+        }
+
+        private void столбецДатаToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            string[,] mx = ds.LoadDataSet(path);
+            string[,] mxsort = ds.SortMax(mx, 0);
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    dataGridViewBase_GAM.Rows[i].Cells[j].Value = mxsort[i, j];
+                }
+            }
+        }
+
+        private void buttonUp_GAM_Click(object sender, EventArgs e)
+        {
+            int chande = dataGridViewBase_GAM.VerticalScrollingOffset
         }
     }
 }
