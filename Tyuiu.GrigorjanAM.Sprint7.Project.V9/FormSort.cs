@@ -61,15 +61,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
         private void сортировкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
-            string[,] mx = ds.LoadDataSet(path);
-            string[,] mxsort = ds.SortMin(mx, 2);
-            for (int i = 0; i < rows; i++)
-            {
-                for (int j = 0; j < columns; j++)
-                {
-                    dataGridViewBaseSort_GAM.Rows[i].Cells[j].Value = mxsort[i, j];
-                }
-            }
+            
             
         }
 

@@ -226,9 +226,30 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             }
         }
 
-        private void buttonUp_GAM_Click(object sender, EventArgs e)
+        //private void buttonUp_GAM_Click(object sender, EventArgs e)
+        //{
+
+            
+        //    dataGridViewBase_GAM.VerticalScrollingOffset = dataGridViewBase_GAM.VerticalScrollingOffset + 10;
+
+        //}
+
+        private void buttonRight_GAM_Click(object sender, EventArgs e)
         {
-            int chande = dataGridViewBase_GAM.VerticalScrollingOffset
+            dataGridViewBase_GAM.HorizontalScrollingOffset = dataGridViewBase_GAM.HorizontalScrollingOffset + 10;
+        }
+
+        private void buttonLeft_GAM_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewBase_GAM.HorizontalScrollingOffset >= 10)
+            {
+                dataGridViewBase_GAM.HorizontalScrollingOffset = dataGridViewBase_GAM.HorizontalScrollingOffset - 10;
+            }
+            else
+            {
+                dataGridViewBase_GAM.HorizontalScrollingOffset = 0;
+            }
+
         }
     }
 }
