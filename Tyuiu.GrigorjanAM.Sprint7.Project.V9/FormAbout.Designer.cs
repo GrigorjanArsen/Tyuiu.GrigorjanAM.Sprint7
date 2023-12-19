@@ -50,9 +50,9 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(218, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(186, 26);
+            this.label1.Size = new System.Drawing.Size(186, 39);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Программа разработана в рамках \r\nизучения языка C#";
+            this.label1.Text = "Программа разработана в рамках \r\nизучения языка C#\r\n\r\n";
             // 
             // FormAbout
             // 

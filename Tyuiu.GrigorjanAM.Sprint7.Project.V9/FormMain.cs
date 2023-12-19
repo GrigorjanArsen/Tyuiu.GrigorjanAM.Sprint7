@@ -116,12 +116,6 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
 
         }
 
-        private void buttonSort_GAM_Click(object sender, EventArgs e)
-        {
-            FormSort formsort = new FormSort();
-            formsort.ShowDialog();
-
-        }
 
 
         private void сортировкаToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -226,13 +220,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             }
         }
 
-        //private void buttonUp_GAM_Click(object sender, EventArgs e)
-        //{
-
-            
-        //    dataGridViewBase_GAM.VerticalScrollingOffset = dataGridViewBase_GAM.VerticalScrollingOffset + 10;
-
-        //}
+      
 
         private void buttonRight_GAM_Click(object sender, EventArgs e)
         {
