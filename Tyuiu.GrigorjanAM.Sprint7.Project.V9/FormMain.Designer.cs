@@ -62,6 +62,8 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             this.groupBoxBase_GAM = new System.Windows.Forms.GroupBox();
             this.dataGridViewBase_GAM = new System.Windows.Forms.DataGridView();
             this.saveFileDialogMain_GAM = new System.Windows.Forms.SaveFileDialog();
+            this.textBoxSearch_GAM = new System.Windows.Forms.TextBox();
+            this.textBoxFilter_GAM = new System.Windows.Forms.TextBox();
             this.panelUpper_GAM.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStripSort_GAM.SuspendLayout();
@@ -307,6 +309,8 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             // panelDown_GAM
             // 
             this.panelDown_GAM.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panelDown_GAM.Controls.Add(this.textBoxFilter_GAM);
+            this.panelDown_GAM.Controls.Add(this.textBoxSearch_GAM);
             this.panelDown_GAM.Controls.Add(this.buttonLeft_GAM);
             this.panelDown_GAM.Controls.Add(this.buttonRight_GAM);
             this.panelDown_GAM.Controls.Add(this.buttonSearch_GAM);
@@ -351,7 +355,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             // 
             // buttonSearch_GAM
             // 
-            this.buttonSearch_GAM.Location = new System.Drawing.Point(164, 6);
+            this.buttonSearch_GAM.Location = new System.Drawing.Point(284, 6);
             this.buttonSearch_GAM.Name = "buttonSearch_GAM";
             this.buttonSearch_GAM.Size = new System.Drawing.Size(75, 34);
             this.buttonSearch_GAM.TabIndex = 0;
@@ -367,7 +371,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             this.pictureBoxSearch_GAM.ErrorImage = null;
             this.pictureBoxSearch_GAM.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSearch_GAM.Image")));
             this.pictureBoxSearch_GAM.InitialImage = null;
-            this.pictureBoxSearch_GAM.Location = new System.Drawing.Point(124, 6);
+            this.pictureBoxSearch_GAM.Location = new System.Drawing.Point(244, 6);
             this.pictureBoxSearch_GAM.Name = "pictureBoxSearch_GAM";
             this.pictureBoxSearch_GAM.Size = new System.Drawing.Size(34, 34);
             this.pictureBoxSearch_GAM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -382,6 +386,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             this.buttonFilter_GAM.TabIndex = 0;
             this.buttonFilter_GAM.Text = "Фильтр";
             this.buttonFilter_GAM.UseVisualStyleBackColor = true;
+            this.buttonFilter_GAM.Click += new System.EventHandler(this.buttonFilter_GAM_Click);
             // 
             // pictureBoxFilter_GAM
             // 
@@ -430,6 +435,22 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             this.dataGridViewBase_GAM.Size = new System.Drawing.Size(798, 309);
             this.dataGridViewBase_GAM.TabIndex = 0;
             // 
+            // textBoxSearch_GAM
+            // 
+            this.textBoxSearch_GAM.Location = new System.Drawing.Point(363, 7);
+            this.textBoxSearch_GAM.Multiline = true;
+            this.textBoxSearch_GAM.Name = "textBoxSearch_GAM";
+            this.textBoxSearch_GAM.Size = new System.Drawing.Size(111, 33);
+            this.textBoxSearch_GAM.TabIndex = 2;
+            // 
+            // textBoxFilter_GAM
+            // 
+            this.textBoxFilter_GAM.Location = new System.Drawing.Point(124, 7);
+            this.textBoxFilter_GAM.Multiline = true;
+            this.textBoxFilter_GAM.Name = "textBoxFilter_GAM";
+            this.textBoxFilter_GAM.Size = new System.Drawing.Size(111, 33);
+            this.textBoxFilter_GAM.TabIndex = 2;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,6 +472,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxManagement_GAM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoad_GAM)).EndInit();
             this.panelDown_GAM.ResumeLayout(false);
+            this.panelDown_GAM.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSearch_GAM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFilter_GAM)).EndInit();
             this.panelMiddle_GAM.ResumeLayout(false);
@@ -493,6 +515,8 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
         private System.Windows.Forms.ToolStripMenuItem столбецВесToolStripMenuItem;
         private System.Windows.Forms.Button buttonReset_GAM;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox textBoxSearch_GAM;
+        private System.Windows.Forms.TextBox textBoxFilter_GAM;
     }
 }
 

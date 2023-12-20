@@ -34,10 +34,10 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
                 matrix = ds.LoadDataSet(openFile);
                 rows = matrix.GetLength(0);
                 columns = matrix.GetLength(1);
-                dataGridViewBase_GAM.RowCount = rows;
+                dataGridViewBase_GAM.RowCount = rows + 100;
                 dataGridViewBase_GAM.ColumnCount = columns;
 
-                
+
                 for (int i = 0; i < rows; i++)
                 {
                     for (int j = 0; j < columns; j++)
@@ -46,6 +46,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
                         dataGridViewBase_GAM.Rows[i].Cells[j].Selected = false;
                     }
                 }
+
                 dataGridViewBase_GAM.Columns[0].Width = 100;
                 dataGridViewBase_GAM.Columns[1].Width = 150;
                 dataGridViewBase_GAM.Columns[3].Width = 150;
@@ -113,6 +114,17 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
 
         private void buttonSearch_GAM_Click(object sender, EventArgs e)
         {
+            dataGridViewBase_GAM.ClearSelection();
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    if (matrix[i, j].Contains(textBoxSearch_GAM.Text))
+                    {
+                        dataGridViewBase_GAM.Rows[i].Selected = true;
+                    }
+                }
+            }
 
         }
 
@@ -158,7 +170,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             }
         }
 
-        
+
         private void buttonReset_GAM_Click(object sender, EventArgs e)
         {
             matrix = ds.LoadDataSet(path);
@@ -220,7 +232,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             }
         }
 
-      
+
 
         private void buttonRight_GAM_Click(object sender, EventArgs e)
         {
@@ -239,5 +251,36 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             }
 
         }
+
+        private void buttonFilter_GAM_Click(object sender, EventArgs e)
+        {
+
+            List<int> rowsToMoveUp = new List<int>();
+            List<int> cellsToMoveUp = new List<int>();
+            for (int i = 1; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    if (matrix[i, j].Contains(textBoxFilter_GAM.Text))
+                    {
+                        rowsToMoveUp.Add(i);
+                    }
+                }
+            }
+            foreach (int rowIndex in rowsToMoveUp)
+            {
+                if (rowIndex >= 0 && rowIndex < dataGridViewBase_GAM.Rows.Count)
+                {
+                    DataGridViewRow rowToMove = (DataGridViewRow)dataGridViewBase_GAM.Rows[rowIndex].Clone();
+                    foreach (DataGridViewCell cell in dataGridViewBase_GAM.Rows[rowIndex].Cells)
+                    {
+                        rowToMove.Cells[cell.ColumnIndex].Value = cell.Value;
+                    }
+                    dataGridViewBase_GAM.Rows.RemoveAt(rowIndex);
+                    dataGridViewBase_GAM.Rows.Insert(1, rowToMove);
+                }
+            }
+            
+        }
+        }
     }
-}
