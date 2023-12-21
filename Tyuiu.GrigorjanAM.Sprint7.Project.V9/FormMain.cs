@@ -255,32 +255,160 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
         private void buttonFilter_GAM_Click(object sender, EventArgs e)
         {
 
-            List<int> rowsToMoveUp = new List<int>();
-            List<int> cellsToMoveUp = new List<int>();
-            for (int i = 1; i < rows; i++)
+            //List<int> rowsToMoveUp = new List<int>();
+            //List<int> cellsToMoveUp = new List<int>();
+            //for (int i = 1; i < rows; i++)
+            //{
+            //    for (int j = 0; j < columns; j++)
+            //    {
+            //        if (matrix[i, j].Contains(textBoxFilter_GAM.Text))
+            //        {
+            //            rowsToMoveUp.Add(i);
+            //        }
+            //    }
+            //}
+            //foreach (int rowIndex in rowsToMoveUp)
+            //{
+            //    if (rowIndex >= 0 && rowIndex < dataGridViewBase_GAM.Rows.Count)
+            //    {
+            //        DataGridViewRow rowToMove = (DataGridViewRow)dataGridViewBase_GAM.Rows[rowIndex].Clone();
+            //        foreach (DataGridViewCell cell in dataGridViewBase_GAM.Rows[rowIndex].Cells)
+            //        {
+            //            rowToMove.Cells[cell.ColumnIndex].Value = cell.Value;
+            //        }
+            //        dataGridViewBase_GAM.Rows.RemoveAt(rowIndex);
+            //        dataGridViewBase_GAM.Rows.Insert(1, rowToMove);
+            //    }
+            //}
+            string filterValue = textBoxFilter_GAM.Text.ToLower();
+
+            for (int i = 1; i < dataGridViewBase_GAM.Rows.Count; i++)
             {
-                for (int j = 0; j < columns; j++)
+                // Проверяем, что строка не является новой строкой
+                if (!dataGridViewBase_GAM.Rows[i].IsNewRow)
                 {
-                    if (matrix[i, j].Contains(textBoxFilter_GAM.Text))
+                    bool rowShouldBeVisible = false;
+
+                    for (int j = 0; j < dataGridViewBase_GAM.Columns.Count; j++)
                     {
-                        rowsToMoveUp.Add(i);
+                        var cellValue = dataGridViewBase_GAM.Rows[i].Cells[j].Value?.ToString()?.ToLower();
+
+                        if (cellValue != null && cellValue.IndexOf(filterValue, StringComparison.OrdinalIgnoreCase) >= 0)
+                        {
+                            rowShouldBeVisible = true;
+                            break;
+                        }
                     }
+                    for (int  q = 0;  q < columns;  q++)
+                    {
+                        dataGridViewBase_GAM.Rows[matrix.GetLength(0)-1].Cells[q].Value = "";
+                        
+                    }
+                    dataGridViewBase_GAM.Rows[matrix.GetLength(0) - 1].Visible = rowShouldBeVisible;
+                    dataGridViewBase_GAM.Rows[i].Visible = rowShouldBeVisible;
                 }
             }
-            foreach (int rowIndex in rowsToMoveUp)
-            {
-                if (rowIndex >= 0 && rowIndex < dataGridViewBase_GAM.Rows.Count)
-                {
-                    DataGridViewRow rowToMove = (DataGridViewRow)dataGridViewBase_GAM.Rows[rowIndex].Clone();
-                    foreach (DataGridViewCell cell in dataGridViewBase_GAM.Rows[rowIndex].Cells)
-                    {
-                        rowToMove.Cells[cell.ColumnIndex].Value = cell.Value;
-                    }
-                    dataGridViewBase_GAM.Rows.RemoveAt(rowIndex);
-                    dataGridViewBase_GAM.Rows.Insert(1, rowToMove);
-                }
-            }
+
+
+
+        }
+
+        private void buttonManagement_GAM_Click(object sender, EventArgs e)
+        {
+            FormManual formmanual = new FormManual();
+            formmanual.ShowDialog();
+        }
+
+        private void buttonLoad_GAM_MouseEnter(object sender, EventArgs e)
+        {
+            buttonLoad_GAM.BackColor = Color.PowderBlue;
+        }
             
+      
+
+        private void buttonSave_GAM_MouseEnter(object sender, EventArgs e)
+        {
+            buttonSave_GAM.BackColor = Color.PowderBlue;
         }
+
+        private void buttonSave_GAM_MouseLeave(object sender, EventArgs e)
+        {
+            buttonSave_GAM.BackColor = Color.Transparent;
         }
+
+        private void buttonLoad_GAM_MouseLeave(object sender, EventArgs e)
+        {
+            buttonLoad_GAM.BackColor = Color.Transparent;
+        }
+
+        private void buttonManagement_GAM_MouseEnter(object sender, EventArgs e)
+        {
+            buttonManagement_GAM.BackColor = Color.PowderBlue;
+        }
+
+        private void buttonManagement_GAM_MouseLeave(object sender, EventArgs e)
+        {
+            buttonManagement_GAM.BackColor = Color.Transparent;
+        }
+
+        private void buttonAbout_GAM_MouseEnter(object sender, EventArgs e)
+        {
+            buttonAbout_GAM.BackColor = Color.PowderBlue;
+        }
+
+        private void buttonAbout_GAM_MouseLeave(object sender, EventArgs e)
+        {
+            buttonAbout_GAM.BackColor = Color.Transparent;
+        }
+
+        private void buttonFilter_GAM_MouseEnter(object sender, EventArgs e)
+        {
+            buttonFilter_GAM.BackColor = Color.PowderBlue;
+        }
+
+        private void buttonFilter_GAM_MouseLeave(object sender, EventArgs e)
+        {
+            buttonFilter_GAM.BackColor = Color.Transparent;
+        }
+
+        private void buttonSearch_GAM_MouseEnter(object sender, EventArgs e)
+        {
+            buttonSearch_GAM.BackColor = Color.PowderBlue;
+        }
+
+        private void buttonSearch_GAM_MouseLeave(object sender, EventArgs e)
+        {
+            buttonSearch_GAM.BackColor = Color.Transparent;
+        }
+
+        private void buttonReset_GAM_MouseEnter(object sender, EventArgs e)
+        {
+            buttonReset_GAM.BackColor = Color.LightGray;
+        }
+
+        private void buttonReset_GAM_MouseLeave(object sender, EventArgs e)
+        {
+            buttonReset_GAM.BackColor = Color.Transparent;
+        }
+
+        private void buttonLeft_GAM_MouseEnter(object sender, EventArgs e)
+        {
+            buttonLeft_GAM.BackColor = Color.LightGray;
+        }
+
+        private void buttonLeft_GAM_MouseLeave(object sender, EventArgs e)
+        {
+            buttonLeft_GAM.BackColor = Color.Transparent;
+        }
+
+        private void buttonRight_GAM_MouseEnter(object sender, EventArgs e)
+        {
+            buttonRight_GAM.BackColor = Color.LightGray;
+        }
+
+        private void buttonRight_GAM_MouseLeave(object sender, EventArgs e)
+        {
+            buttonRight_GAM.BackColor = Color.Transparent;
+        }
+    }
     }
