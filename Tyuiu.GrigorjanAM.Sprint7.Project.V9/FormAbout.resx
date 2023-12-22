@@ -5635,4 +5635,17 @@
         JFaNZmgt0dUm345B+Z22qw37u9FFFYRd0dCimj//2Q==
 </value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Разработчик: Григорян А. М.
+группа ИИПБ-23-3
+
+Программа разработана в рамках 
+изучения языка C#
+
+Тюменский индустриальный университет (с) 2023
+Высшая школа цифровых технолгий (с) 2023
+
+Внутреннее имя: Tyuiu.GrigorjanAM.Sprint7.V9
+</value>
+  </data>
 </root>

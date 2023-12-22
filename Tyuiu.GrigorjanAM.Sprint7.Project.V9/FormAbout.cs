@@ -16,5 +16,10 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
         {
             InitializeComponent();
         }
+
+        private void buttonOK_GAM_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

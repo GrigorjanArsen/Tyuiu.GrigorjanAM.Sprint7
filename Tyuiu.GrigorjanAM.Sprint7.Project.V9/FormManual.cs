@@ -16,5 +16,35 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
         {
             InitializeComponent();
         }
+
+        private void pictureBoxLoad_GAM_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxSave_GAM_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxSort_GAM_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxLeft_GAM_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxRight_GAM_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxSearch_GAM_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

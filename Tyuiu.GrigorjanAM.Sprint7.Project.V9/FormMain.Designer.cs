@@ -53,19 +53,27 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             this.buttonManagement_GAM = new System.Windows.Forms.Button();
             this.buttonLoad_GAM = new System.Windows.Forms.Button();
             this.panelDown_GAM = new System.Windows.Forms.Panel();
+            this.buttonGraph_GAM = new System.Windows.Forms.Button();
             this.textBoxFilter_GAM = new System.Windows.Forms.TextBox();
             this.textBoxSearch_GAM = new System.Windows.Forms.TextBox();
             this.buttonLeft_GAM = new System.Windows.Forms.Button();
             this.buttonRight_GAM = new System.Windows.Forms.Button();
             this.buttonSearch_GAM = new System.Windows.Forms.Button();
             this.pictureBoxSearch_GAM = new System.Windows.Forms.PictureBox();
-            this.buttonFilter_GAM = new System.Windows.Forms.Button();
             this.pictureBoxFilter_GAM = new System.Windows.Forms.PictureBox();
             this.panelMiddle_GAM = new System.Windows.Forms.Panel();
             this.groupBoxBase_GAM = new System.Windows.Forms.GroupBox();
             this.dataGridViewBase_GAM = new System.Windows.Forms.DataGridView();
             this.saveFileDialogMain_GAM = new System.Windows.Forms.SaveFileDialog();
             this.toolTipButtons_GAM = new System.Windows.Forms.ToolTip(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.фильтрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.названиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.весToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.длительностьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.форматToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.категорияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.iDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelUpper_GAM.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSort_GAM)).BeginInit();
             this.menuStripSort_GAM.SuspendLayout();
@@ -79,6 +87,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             this.panelMiddle_GAM.SuspendLayout();
             this.groupBoxBase_GAM.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBase_GAM)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialogMain_GAM
@@ -121,6 +130,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             this.buttonReset_GAM.BackColor = System.Drawing.Color.Transparent;
             this.buttonReset_GAM.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonReset_GAM.BackgroundImage")));
             this.buttonReset_GAM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonReset_GAM.Enabled = false;
             this.buttonReset_GAM.FlatAppearance.BorderSize = 0;
             this.buttonReset_GAM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReset_GAM.Location = new System.Drawing.Point(243, 6);
@@ -328,23 +338,35 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             // panelDown_GAM
             // 
             this.panelDown_GAM.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panelDown_GAM.Controls.Add(this.buttonGraph_GAM);
             this.panelDown_GAM.Controls.Add(this.textBoxFilter_GAM);
             this.panelDown_GAM.Controls.Add(this.textBoxSearch_GAM);
             this.panelDown_GAM.Controls.Add(this.buttonLeft_GAM);
             this.panelDown_GAM.Controls.Add(this.buttonRight_GAM);
             this.panelDown_GAM.Controls.Add(this.buttonSearch_GAM);
             this.panelDown_GAM.Controls.Add(this.pictureBoxSearch_GAM);
-            this.panelDown_GAM.Controls.Add(this.buttonFilter_GAM);
             this.panelDown_GAM.Controls.Add(this.pictureBoxFilter_GAM);
+            this.panelDown_GAM.Controls.Add(this.menuStrip1);
             this.panelDown_GAM.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelDown_GAM.Location = new System.Drawing.Point(0, 412);
             this.panelDown_GAM.Name = "panelDown_GAM";
             this.panelDown_GAM.Size = new System.Drawing.Size(804, 49);
             this.panelDown_GAM.TabIndex = 1;
             // 
+            // buttonGraph_GAM
+            // 
+            this.buttonGraph_GAM.Location = new System.Drawing.Point(469, 7);
+            this.buttonGraph_GAM.Name = "buttonGraph_GAM";
+            this.buttonGraph_GAM.Size = new System.Drawing.Size(75, 33);
+            this.buttonGraph_GAM.TabIndex = 3;
+            this.buttonGraph_GAM.Text = "График";
+            this.toolTipButtons_GAM.SetToolTip(this.buttonGraph_GAM, "Перейти в среду для отображения графиков");
+            this.buttonGraph_GAM.UseVisualStyleBackColor = true;
+            this.buttonGraph_GAM.Click += new System.EventHandler(this.buttonGraph_GAM_Click);
+            // 
             // textBoxFilter_GAM
             // 
-            this.textBoxFilter_GAM.Location = new System.Drawing.Point(124, 7);
+            this.textBoxFilter_GAM.Location = new System.Drawing.Point(112, 7);
             this.textBoxFilter_GAM.Multiline = true;
             this.textBoxFilter_GAM.Name = "textBoxFilter_GAM";
             this.textBoxFilter_GAM.Size = new System.Drawing.Size(111, 33);
@@ -352,7 +374,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             // 
             // textBoxSearch_GAM
             // 
-            this.textBoxSearch_GAM.Location = new System.Drawing.Point(363, 7);
+            this.textBoxSearch_GAM.Location = new System.Drawing.Point(351, 7);
             this.textBoxSearch_GAM.Multiline = true;
             this.textBoxSearch_GAM.Name = "textBoxSearch_GAM";
             this.textBoxSearch_GAM.Size = new System.Drawing.Size(111, 33);
@@ -396,7 +418,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             // 
             // buttonSearch_GAM
             // 
-            this.buttonSearch_GAM.Location = new System.Drawing.Point(284, 6);
+            this.buttonSearch_GAM.Location = new System.Drawing.Point(272, 6);
             this.buttonSearch_GAM.Name = "buttonSearch_GAM";
             this.buttonSearch_GAM.Size = new System.Drawing.Size(75, 34);
             this.buttonSearch_GAM.TabIndex = 0;
@@ -415,25 +437,12 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             this.pictureBoxSearch_GAM.ErrorImage = null;
             this.pictureBoxSearch_GAM.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSearch_GAM.Image")));
             this.pictureBoxSearch_GAM.InitialImage = null;
-            this.pictureBoxSearch_GAM.Location = new System.Drawing.Point(244, 6);
+            this.pictureBoxSearch_GAM.Location = new System.Drawing.Point(232, 6);
             this.pictureBoxSearch_GAM.Name = "pictureBoxSearch_GAM";
             this.pictureBoxSearch_GAM.Size = new System.Drawing.Size(34, 34);
             this.pictureBoxSearch_GAM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxSearch_GAM.TabIndex = 1;
             this.pictureBoxSearch_GAM.TabStop = false;
-            // 
-            // buttonFilter_GAM
-            // 
-            this.buttonFilter_GAM.Location = new System.Drawing.Point(43, 6);
-            this.buttonFilter_GAM.Name = "buttonFilter_GAM";
-            this.buttonFilter_GAM.Size = new System.Drawing.Size(75, 34);
-            this.buttonFilter_GAM.TabIndex = 0;
-            this.buttonFilter_GAM.Text = "Фильтр";
-            this.toolTipButtons_GAM.SetToolTip(this.buttonFilter_GAM, "Выполнить фильтрацию по заданному тексту");
-            this.buttonFilter_GAM.UseVisualStyleBackColor = true;
-            this.buttonFilter_GAM.Click += new System.EventHandler(this.buttonFilter_GAM_Click);
-            this.buttonFilter_GAM.MouseEnter += new System.EventHandler(this.buttonFilter_GAM_MouseEnter);
-            this.buttonFilter_GAM.MouseLeave += new System.EventHandler(this.buttonFilter_GAM_MouseLeave);
             // 
             // pictureBoxFilter_GAM
             // 
@@ -488,6 +497,72 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             this.toolTipButtons_GAM.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTipButtons_GAM.ToolTipTitle = "Подсказка";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.фильтрToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(41, 11);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(68, 24);
+            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // фильтрToolStripMenuItem
+            // 
+            this.фильтрToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.названиеToolStripMenuItem,
+            this.весToolStripMenuItem,
+            this.длительностьToolStripMenuItem,
+            this.форматToolStripMenuItem,
+            this.категорияToolStripMenuItem,
+            this.iDToolStripMenuItem});
+            this.фильтрToolStripMenuItem.Name = "фильтрToolStripMenuItem";
+            this.фильтрToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.фильтрToolStripMenuItem.Text = "Фильтр";
+            // 
+            // названиеToolStripMenuItem
+            // 
+            this.названиеToolStripMenuItem.Name = "названиеToolStripMenuItem";
+            this.названиеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.названиеToolStripMenuItem.Text = "Название";
+            this.названиеToolStripMenuItem.Click += new System.EventHandler(this.названиеToolStripMenuItem_Click);
+            // 
+            // весToolStripMenuItem
+            // 
+            this.весToolStripMenuItem.Name = "весToolStripMenuItem";
+            this.весToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.весToolStripMenuItem.Text = "Вес";
+            this.весToolStripMenuItem.Click += new System.EventHandler(this.весToolStripMenuItem_Click);
+            // 
+            // длительностьToolStripMenuItem
+            // 
+            this.длительностьToolStripMenuItem.Name = "длительностьToolStripMenuItem";
+            this.длительностьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.длительностьToolStripMenuItem.Text = "Длительность";
+            this.длительностьToolStripMenuItem.Click += new System.EventHandler(this.длительностьToolStripMenuItem_Click);
+            // 
+            // форматToolStripMenuItem
+            // 
+            this.форматToolStripMenuItem.Name = "форматToolStripMenuItem";
+            this.форматToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.форматToolStripMenuItem.Text = "Формат";
+            this.форматToolStripMenuItem.Click += new System.EventHandler(this.форматToolStripMenuItem_Click);
+            // 
+            // категорияToolStripMenuItem
+            // 
+            this.категорияToolStripMenuItem.Name = "категорияToolStripMenuItem";
+            this.категорияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.категорияToolStripMenuItem.Text = "Категория";
+            this.категорияToolStripMenuItem.Click += new System.EventHandler(this.категорияToolStripMenuItem_Click);
+            // 
+            // iDToolStripMenuItem
+            // 
+            this.iDToolStripMenuItem.Name = "iDToolStripMenuItem";
+            this.iDToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.iDToolStripMenuItem.Text = "ID";
+            this.iDToolStripMenuItem.Click += new System.EventHandler(this.iDToolStripMenuItem_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -496,6 +571,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             this.Controls.Add(this.panelMiddle_GAM);
             this.Controls.Add(this.panelDown_GAM);
             this.Controls.Add(this.panelUpper_GAM);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Каталог видеоклипов";
@@ -515,6 +591,8 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             this.panelMiddle_GAM.ResumeLayout(false);
             this.groupBoxBase_GAM.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBase_GAM)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -534,7 +612,6 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
         private System.Windows.Forms.Button buttonManagement_GAM;
         private System.Windows.Forms.Button buttonLeft_GAM;
         private System.Windows.Forms.Button buttonRight_GAM;
-        private System.Windows.Forms.Button buttonFilter_GAM;
         private System.Windows.Forms.PictureBox pictureBoxFilter_GAM;
         private System.Windows.Forms.GroupBox groupBoxBase_GAM;
         private System.Windows.Forms.DataGridView dataGridViewBase_GAM;
@@ -555,6 +632,15 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
         private System.Windows.Forms.TextBox textBoxSearch_GAM;
         private System.Windows.Forms.TextBox textBoxFilter_GAM;
         private System.Windows.Forms.ToolTip toolTipButtons_GAM;
+        private System.Windows.Forms.Button buttonGraph_GAM;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem фильтрToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem названиеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem весToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem длительностьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem форматToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem категорияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem iDToolStripMenuItem;
     }
 }
 

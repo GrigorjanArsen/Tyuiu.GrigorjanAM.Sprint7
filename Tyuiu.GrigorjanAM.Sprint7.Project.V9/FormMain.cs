@@ -28,13 +28,14 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
         {
             try
             {
+                
                 openFileDialogMain_GAM.ShowDialog();
                 openFile = openFileDialogMain_GAM.FileName;
 
                 matrix = ds.LoadDataSet(openFile);
                 rows = matrix.GetLength(0);
                 columns = matrix.GetLength(1);
-                dataGridViewBase_GAM.RowCount = rows + 100;
+                dataGridViewBase_GAM.RowCount = rows + 1;
                 dataGridViewBase_GAM.ColumnCount = columns;
 
 
@@ -50,6 +51,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
                 dataGridViewBase_GAM.Columns[0].Width = 100;
                 dataGridViewBase_GAM.Columns[1].Width = 150;
                 dataGridViewBase_GAM.Columns[3].Width = 150;
+                buttonReset_GAM.Enabled = true;
 
             }
             catch
@@ -115,16 +117,25 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
         private void buttonSearch_GAM_Click(object sender, EventArgs e)
         {
             dataGridViewBase_GAM.ClearSelection();
-            for (int i = 0; i < rows; i++)
+            if (textBoxSearch_GAM.Text == "")
             {
-                for (int j = 0; j < columns; j++)
+                MessageBox.Show("Введите критерий для поиска", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            else
+            {
+                for (int i = 0; i < rows; i++)
                 {
-                    if (matrix[i, j].Contains(textBoxSearch_GAM.Text))
+                    for (int j = 0; j < columns; j++)
                     {
-                        dataGridViewBase_GAM.Rows[i].Selected = true;
+                        if (matrix[i, j].ToLower().Contains(textBoxSearch_GAM.Text.ToLower()))
+                        {
+                            dataGridViewBase_GAM.Rows[i].Selected = true;
+                        }
                     }
                 }
             }
+            
 
         }
 
@@ -173,10 +184,15 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
 
         private void buttonReset_GAM_Click(object sender, EventArgs e)
         {
+            for (int v = 0; v < rows; v++)
+            {
+                dataGridViewBase_GAM.Rows[v].Visible = true;
+            }
+            dataGridViewBase_GAM.Rows.Clear();
             matrix = ds.LoadDataSet(path);
             rows = matrix.GetLength(0);
             columns = matrix.GetLength(1);
-            dataGridViewBase_GAM.RowCount = rows;
+            dataGridViewBase_GAM.RowCount = rows + 1;
             dataGridViewBase_GAM.ColumnCount = columns;
 
 
@@ -254,61 +270,49 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
 
         private void buttonFilter_GAM_Click(object sender, EventArgs e)
         {
-
-            //List<int> rowsToMoveUp = new List<int>();
-            //List<int> cellsToMoveUp = new List<int>();
-            //for (int i = 1; i < rows; i++)
-            //{
-            //    for (int j = 0; j < columns; j++)
-            //    {
-            //        if (matrix[i, j].Contains(textBoxFilter_GAM.Text))
-            //        {
-            //            rowsToMoveUp.Add(i);
-            //        }
-            //    }
-            //}
-            //foreach (int rowIndex in rowsToMoveUp)
-            //{
-            //    if (rowIndex >= 0 && rowIndex < dataGridViewBase_GAM.Rows.Count)
-            //    {
-            //        DataGridViewRow rowToMove = (DataGridViewRow)dataGridViewBase_GAM.Rows[rowIndex].Clone();
-            //        foreach (DataGridViewCell cell in dataGridViewBase_GAM.Rows[rowIndex].Cells)
-            //        {
-            //            rowToMove.Cells[cell.ColumnIndex].Value = cell.Value;
-            //        }
-            //        dataGridViewBase_GAM.Rows.RemoveAt(rowIndex);
-            //        dataGridViewBase_GAM.Rows.Insert(1, rowToMove);
-            //    }
-            //}
-            string filterValue = textBoxFilter_GAM.Text.ToLower();
-
-            for (int i = 1; i < dataGridViewBase_GAM.Rows.Count; i++)
+            if (textBoxFilter_GAM.Text == "")
             {
-                // Проверяем, что строка не является новой строкой
-                if (!dataGridViewBase_GAM.Rows[i].IsNewRow)
+                MessageBox.Show("Введите критерий для фильтрации", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                string filterValue = textBoxFilter_GAM.Text.ToLower();
+                for (int i = 1; i < dataGridViewBase_GAM.Rows.Count; i++)
                 {
-                    bool rowShouldBeVisible = false;
-
-                    for (int j = 0; j < dataGridViewBase_GAM.Columns.Count; j++)
+                    if (!dataGridViewBase_GAM.Rows[i].IsNewRow)
                     {
-                        var cellValue = dataGridViewBase_GAM.Rows[i].Cells[j].Value?.ToString()?.ToLower();
+                        bool rowShouldBeVisible = false;
 
-                        if (cellValue != null && cellValue.IndexOf(filterValue, StringComparison.OrdinalIgnoreCase) >= 0)
+                        for (int j = 0; j < dataGridViewBase_GAM.Columns.Count; j++)
                         {
-                            rowShouldBeVisible = true;
-                            break;
+                            var cellValue = dataGridViewBase_GAM.Rows[i].Cells[j].Value?.ToString()?.ToLower();
+
+                            if (cellValue != null && cellValue.IndexOf(filterValue, StringComparison.OrdinalIgnoreCase) >= 0)
+                            {
+                                rowShouldBeVisible = true;
+                                break;
+                            }
                         }
+                        for (int q = 0; q < columns; q++)
+                        {
+                            dataGridViewBase_GAM.Rows[matrix.GetLength(0) - 1].Cells[q].Value = "";
+
+                        }
+
+                        dataGridViewBase_GAM.Rows[i].Visible = rowShouldBeVisible;
+
                     }
-                    for (int  q = 0;  q < columns;  q++)
-                    {
-                        dataGridViewBase_GAM.Rows[matrix.GetLength(0)-1].Cells[q].Value = "";
-                        
-                    }
-                    dataGridViewBase_GAM.Rows[matrix.GetLength(0) - 1].Visible = rowShouldBeVisible;
-                    dataGridViewBase_GAM.Rows[i].Visible = rowShouldBeVisible;
                 }
             }
+            //string filtervalue = textBoxFilter_GAM.Text.ToLower();
+            //for (int i = 1; i < rows; i++)
+            //{
+            //    if (!(matrix[i, 1].ToLower().Contains(filtervalue)))
+            //    {
+            //        dataGridViewBase_GAM.Rows[i].Visible = false;
+            //    }
 
+            //}
 
 
         }
@@ -361,15 +365,15 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             buttonAbout_GAM.BackColor = Color.Transparent;
         }
 
-        private void buttonFilter_GAM_MouseEnter(object sender, EventArgs e)
-        {
-            buttonFilter_GAM.BackColor = Color.PowderBlue;
-        }
+        //private void buttonFilter_GAM_MouseEnter(object sender, EventArgs e)
+        //{
+        //    buttonFilter_GAM.BackColor = Color.PowderBlue;
+        //}
 
-        private void buttonFilter_GAM_MouseLeave(object sender, EventArgs e)
-        {
-            buttonFilter_GAM.BackColor = Color.Transparent;
-        }
+        //private void buttonFilter_GAM_MouseLeave(object sender, EventArgs e)
+        //{
+        //    buttonFilter_GAM.BackColor = Color.Transparent;
+        //}
 
         private void buttonSearch_GAM_MouseEnter(object sender, EventArgs e)
         {
@@ -410,5 +414,139 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
         {
             buttonRight_GAM.BackColor = Color.Transparent;
         }
+
+        private void buttonGraph_GAM_Click(object sender, EventArgs e)
+        {
+            FormGraph fg = new FormGraph();
+            fg.ShowDialog();
+        }
+
+        private void названиеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string filtervalue = textBoxFilter_GAM.Text.ToLower();
+                for (int i = 1; i < rows; i++)
+                {
+                    if (!(matrix[i, 1].ToLower().Contains(filtervalue)))
+                    {
+                        dataGridViewBase_GAM.Rows[i].Visible = false;
+                    }
+
+
+                }
+                dataGridViewBase_GAM.Rows[rows].Visible = false;
+            }
+            catch
+            {
+                
+            }
+        }
+
+        private void весToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string filtervalue = textBoxFilter_GAM.Text.ToLower();
+                for (int i = 1; i < rows; i++)
+                {
+                    if (!(matrix[i, 5].ToLower().Contains(filtervalue)))
+                    {
+                        dataGridViewBase_GAM.Rows[i].Visible = false;
+                    }
+
+                }
+                dataGridViewBase_GAM.Rows[rows].Visible = false;
+            }
+            catch
+            {
+                
+            }
+        }
+
+        private void длительностьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string filtervalue = textBoxFilter_GAM.Text.ToLower();
+                for (int i = 1; i < rows; i++)
+                {
+                    if (!(matrix[i, 2].ToLower().Contains(filtervalue)))
+                    {
+                        dataGridViewBase_GAM.Rows[i].Visible = false;
+                    }
+
+                }
+                dataGridViewBase_GAM.Rows[rows].Visible = false;
+            }
+            catch
+            {
+                
+            }
+        }
+
+        private void форматToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string filtervalue = textBoxFilter_GAM.Text.ToLower();
+                for (int i = 1; i < rows; i++)
+                {
+                    if (!(matrix[i, 3].ToLower().Contains(filtervalue)))
+                    {
+                        dataGridViewBase_GAM.Rows[i].Visible = false;
+                    }
+
+                }
+                dataGridViewBase_GAM.Rows[rows].Visible = false;
+            }
+            catch
+            {
+                
+            }
+        }
+
+        private void категорияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string filtervalue = textBoxFilter_GAM.Text.ToLower();
+                for (int i = 1; i < rows; i++)
+                {
+                    if (!(matrix[i, 6].ToLower().Contains(filtervalue)))
+                    {
+                        dataGridViewBase_GAM.Rows[i].Visible = false;
+                    }
+
+                }
+                dataGridViewBase_GAM.Rows[rows].Visible = false;
+            }
+            catch
+            {
+               
+            }
+        }
+
+        private void iDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string filtervalue = textBoxFilter_GAM.Text.ToLower();
+                for (int i = 1; i < rows; i++)
+                {
+                    if (!(matrix[i, 0].ToLower().Contains(filtervalue)))
+                    {
+                        dataGridViewBase_GAM.Rows[i].Visible = false;
+                    }
+
+                }
+                dataGridViewBase_GAM.Rows[rows].Visible = false;
+                
+        }
+            catch
+            {
+                
+            }
+}
     }
     }
