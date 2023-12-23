@@ -21,7 +21,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
 
         DataService ds = new DataService();
         string path = @"C:\Users\djura\Desktop\DataSet.csv";
-        static string openFile;
+
         static int rows;
         static int columns;
         static string[,] matrix;
@@ -366,6 +366,42 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             }
             double sred = Math.Round(doubleDlit.Sum() / doubleDlit.Length,3);
             textBoxOutPutMinMax_GAM.Text = Convert.ToString(sred);
+        }
+
+        private void buttonBack_GAM_MouseLeave(object sender, EventArgs e)
+        {
+            buttonBack_GAM.BackColor = Color.FromArgb(40, 40, 40);
+            buttonBack_GAM.ForeColor = Color.WhiteSmoke;
+        }
+
+        private void buttonBack_GAM_MouseEnter(object sender, EventArgs e)
+        {
+            buttonBack_GAM.BackColor = Color.DarkTurquoise;
+            buttonBack_GAM.ForeColor = Color.Black;
+        }
+
+        private void buttonManagement_GAM_MouseLeave(object sender, EventArgs e)
+        {
+            buttonManagement_GAM.BackColor = Color.FromArgb(40, 40, 40);
+            buttonManagement_GAM.ForeColor = Color.WhiteSmoke;
+        }
+
+        private void buttonManagement_GAM_MouseEnter(object sender, EventArgs e)
+        {
+            buttonManagement_GAM.BackColor = Color.DarkTurquoise;
+            buttonManagement_GAM.ForeColor = Color.Black;
+        }
+
+        private void buttonAbout_GAM_MouseEnter(object sender, EventArgs e)
+        {
+            buttonAbout_GAM.BackColor = Color.DarkTurquoise;
+            buttonAbout_GAM.ForeColor = Color.Black;
+        }
+
+        private void buttonAbout_GAM_MouseLeave(object sender, EventArgs e)
+        {
+            buttonAbout_GAM.BackColor = Color.FromArgb(40, 40, 40);
+            buttonAbout_GAM.ForeColor = Color.WhiteSmoke;
         }
     }
     }

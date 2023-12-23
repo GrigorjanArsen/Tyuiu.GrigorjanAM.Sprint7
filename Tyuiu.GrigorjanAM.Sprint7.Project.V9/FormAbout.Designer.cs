@@ -31,7 +31,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAbout));
             this.pictureBoxAbout_GAM = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelText_GAM = new System.Windows.Forms.Label();
             this.buttonOK_GAM = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAbout_GAM)).BeginInit();
             this.SuspendLayout();
@@ -46,32 +46,38 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             this.pictureBoxAbout_GAM.TabIndex = 0;
             this.pictureBoxAbout_GAM.TabStop = false;
             // 
-            // label1
+            // labelText_GAM
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(218, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(261, 130);
-            this.label1.TabIndex = 1;
-            this.label1.Text = resources.GetString("label1.Text");
+            this.labelText_GAM.AutoSize = true;
+            this.labelText_GAM.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.labelText_GAM.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.labelText_GAM.Location = new System.Drawing.Point(218, 30);
+            this.labelText_GAM.Name = "labelText_GAM";
+            this.labelText_GAM.Size = new System.Drawing.Size(257, 165);
+            this.labelText_GAM.TabIndex = 1;
+            this.labelText_GAM.Text = resources.GetString("labelText_GAM.Text");
             // 
             // buttonOK_GAM
             // 
+            this.buttonOK_GAM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.buttonOK_GAM.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonOK_GAM.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.buttonOK_GAM.Location = new System.Drawing.Point(397, 226);
             this.buttonOK_GAM.Name = "buttonOK_GAM";
             this.buttonOK_GAM.Size = new System.Drawing.Size(75, 23);
             this.buttonOK_GAM.TabIndex = 2;
             this.buttonOK_GAM.Text = "OK";
-            this.buttonOK_GAM.UseVisualStyleBackColor = true;
+            this.buttonOK_GAM.UseVisualStyleBackColor = false;
             this.buttonOK_GAM.Click += new System.EventHandler(this.buttonOK_GAM_Click);
             // 
             // FormAbout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.ClientSize = new System.Drawing.Size(484, 261);
             this.Controls.Add(this.buttonOK_GAM);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelText_GAM);
             this.Controls.Add(this.pictureBoxAbout_GAM);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -88,7 +94,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxAbout_GAM;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelText_GAM;
         private System.Windows.Forms.Button buttonOK_GAM;
     }
 }

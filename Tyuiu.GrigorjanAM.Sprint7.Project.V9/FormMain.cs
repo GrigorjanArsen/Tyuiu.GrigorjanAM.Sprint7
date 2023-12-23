@@ -17,7 +17,13 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
         public FormMain()
         {
             InitializeComponent();
+            FormMenu formmenu = new FormMenu();
+            formmenu.TopMost = true;
+            formmenu.Show();
+
+
         }
+        
         DataService ds = new DataService();
         string path = @"C:\Users\djura\Desktop\DataSet.csv";
         static string openFile;
@@ -51,6 +57,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
                 dataGridViewBase_GAM.Columns[0].Width = 100;
                 dataGridViewBase_GAM.Columns[1].Width = 150;
                 dataGridViewBase_GAM.Columns[3].Width = 150;
+                dataGridViewBase_GAM.Columns[6].Width = 900;
                 buttonReset_GAM.Enabled = true;
 
             }
@@ -188,6 +195,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             {
                 dataGridViewBase_GAM.Rows[v].Visible = true;
             }
+
             dataGridViewBase_GAM.Rows.Clear();
             matrix = ds.LoadDataSet(path);
             rows = matrix.GetLength(0);
@@ -325,74 +333,75 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
 
         private void buttonLoad_GAM_MouseEnter(object sender, EventArgs e)
         {
-            buttonLoad_GAM.BackColor = Color.PowderBlue;
+            buttonLoad_GAM.BackColor = Color.DarkTurquoise;
+            buttonLoad_GAM.ForeColor = Color.Black;
         }
             
       
 
         private void buttonSave_GAM_MouseEnter(object sender, EventArgs e)
         {
-            buttonSave_GAM.BackColor = Color.PowderBlue;
+            buttonSave_GAM.BackColor = Color.DarkTurquoise;
+            buttonSave_GAM.ForeColor = Color.Black;
         }
 
         private void buttonSave_GAM_MouseLeave(object sender, EventArgs e)
         {
-            buttonSave_GAM.BackColor = Color.Transparent;
+            buttonSave_GAM.BackColor = Color.FromArgb(40, 40, 40);
+            buttonSave_GAM.ForeColor = Color.WhiteSmoke;
         }
 
         private void buttonLoad_GAM_MouseLeave(object sender, EventArgs e)
         {
-            buttonLoad_GAM.BackColor = Color.Transparent;
+            buttonLoad_GAM.BackColor = Color.FromArgb(40, 40, 40);
+            buttonLoad_GAM.ForeColor = Color.WhiteSmoke;
         }
 
         private void buttonManagement_GAM_MouseEnter(object sender, EventArgs e)
         {
-            buttonManagement_GAM.BackColor = Color.PowderBlue;
+            buttonManagement_GAM.BackColor = Color.DarkTurquoise;
+            buttonManagement_GAM.ForeColor = Color.Black;
         }
 
         private void buttonManagement_GAM_MouseLeave(object sender, EventArgs e)
         {
-            buttonManagement_GAM.BackColor = Color.Transparent;
+            buttonManagement_GAM.BackColor = Color.FromArgb(40, 40, 40);
+            buttonManagement_GAM.ForeColor = Color.WhiteSmoke;
         }
 
         private void buttonAbout_GAM_MouseEnter(object sender, EventArgs e)
         {
-            buttonAbout_GAM.BackColor = Color.PowderBlue;
+            buttonAbout_GAM.BackColor = Color.DarkTurquoise;
+            buttonAbout_GAM.ForeColor = Color.Black;
         }
 
         private void buttonAbout_GAM_MouseLeave(object sender, EventArgs e)
         {
-            buttonAbout_GAM.BackColor = Color.Transparent;
+            buttonAbout_GAM.BackColor = Color.FromArgb(40, 40, 40);
+            buttonAbout_GAM.ForeColor = Color.WhiteSmoke;
         }
-
-        //private void buttonFilter_GAM_MouseEnter(object sender, EventArgs e)
-        //{
-        //    buttonFilter_GAM.BackColor = Color.PowderBlue;
-        //}
-
-        //private void buttonFilter_GAM_MouseLeave(object sender, EventArgs e)
-        //{
-        //    buttonFilter_GAM.BackColor = Color.Transparent;
-        //}
 
         private void buttonSearch_GAM_MouseEnter(object sender, EventArgs e)
         {
-            buttonSearch_GAM.BackColor = Color.PowderBlue;
+            buttonSearch_GAM.BackColor = Color.DarkTurquoise;
+            buttonSearch_GAM.ForeColor = Color.Black;
         }
 
         private void buttonSearch_GAM_MouseLeave(object sender, EventArgs e)
         {
-            buttonSearch_GAM.BackColor = Color.Transparent;
+            buttonSearch_GAM.BackColor = Color.FromArgb(40, 40, 40);
+            buttonSearch_GAM.ForeColor = Color.WhiteSmoke;
         }
 
         private void buttonReset_GAM_MouseEnter(object sender, EventArgs e)
         {
-            buttonReset_GAM.BackColor = Color.LightGray;
+            buttonReset_GAM.BackColor = Color.DarkTurquoise;
+
         }
 
         private void buttonReset_GAM_MouseLeave(object sender, EventArgs e)
         {
-            buttonReset_GAM.BackColor = Color.Transparent;
+            buttonReset_GAM.BackColor = Color.FromArgb(60, 60, 60);
         }
 
         private void buttonLeft_GAM_MouseEnter(object sender, EventArgs e)
@@ -402,7 +411,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
 
         private void buttonLeft_GAM_MouseLeave(object sender, EventArgs e)
         {
-            buttonLeft_GAM.BackColor = Color.Transparent;
+            buttonLeft_GAM.BackColor = Color.FromArgb(60, 60, 60);
         }
 
         private void buttonRight_GAM_MouseEnter(object sender, EventArgs e)
@@ -412,7 +421,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
 
         private void buttonRight_GAM_MouseLeave(object sender, EventArgs e)
         {
-            buttonRight_GAM.BackColor = Color.Transparent;
+            buttonRight_GAM.BackColor = Color.FromArgb(60, 60, 60);
         }
 
         private void buttonGraph_GAM_Click(object sender, EventArgs e)
@@ -548,5 +557,17 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
                 
             }
 }
+
+        private void buttonGraph_GAM_MouseEnter(object sender, EventArgs e)
+        {
+            buttonGraph_GAM.BackColor = Color.DarkTurquoise;
+            buttonGraph_GAM.ForeColor = Color.Black;
+        }
+
+        private void buttonGraph_GAM_MouseLeave(object sender, EventArgs e)
+        {
+            buttonGraph_GAM.BackColor = Color.FromArgb(40, 40, 40);
+            buttonGraph_GAM.ForeColor = Color.WhiteSmoke;
+        }
     }
     }
