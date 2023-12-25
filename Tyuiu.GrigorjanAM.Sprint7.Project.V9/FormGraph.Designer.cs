@@ -64,6 +64,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             this.pictureBoxManagement_GAM = new System.Windows.Forms.PictureBox();
             this.pictureBoxBack_GAM = new System.Windows.Forms.PictureBox();
             this.openFileDialogGraph_GAM = new System.Windows.Forms.OpenFileDialog();
+            this.pictureBoxWait_GAM = new System.Windows.Forms.PictureBox();
             this.panelMiddleGraph_GAM.SuspendLayout();
             this.groupBoxBaseGraph_GAM.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartGraph_GAM)).BeginInit();
@@ -72,6 +73,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAbout_GAM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxManagement_GAM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBack_GAM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWait_GAM)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMiddleGraph_GAM
@@ -87,6 +89,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             // groupBoxBaseGraph_GAM
             // 
             this.groupBoxBaseGraph_GAM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.groupBoxBaseGraph_GAM.Controls.Add(this.pictureBoxWait_GAM);
             this.groupBoxBaseGraph_GAM.Controls.Add(this.chartGraph_GAM);
             this.groupBoxBaseGraph_GAM.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxBaseGraph_GAM.ForeColor = System.Drawing.SystemColors.HighlightText;
@@ -187,7 +190,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             this.среднееЗначениеToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(3, 57);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(542, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(662, 24);
             this.menuStrip1.TabIndex = 11;
             this.toolTipButtonsGraph_GAM.SetToolTip(this.menuStrip1, "Выберите нужный для вас график");
             // 
@@ -389,6 +392,17 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             // 
             this.openFileDialogGraph_GAM.FileName = "openFileDialog1";
             // 
+            // pictureBoxWait_GAM
+            // 
+            this.pictureBoxWait_GAM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxWait_GAM.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxWait_GAM.Image")));
+            this.pictureBoxWait_GAM.Location = new System.Drawing.Point(3, 16);
+            this.pictureBoxWait_GAM.Name = "pictureBoxWait_GAM";
+            this.pictureBoxWait_GAM.Size = new System.Drawing.Size(794, 347);
+            this.pictureBoxWait_GAM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxWait_GAM.TabIndex = 1;
+            this.pictureBoxWait_GAM.TabStop = false;
+            // 
             // FormGraph
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -400,6 +414,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             this.Name = "FormGraph";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Графики";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelMiddleGraph_GAM.ResumeLayout(false);
             this.groupBoxBaseGraph_GAM.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartGraph_GAM)).EndInit();
@@ -410,6 +425,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAbout_GAM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxManagement_GAM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBack_GAM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxWait_GAM)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -445,5 +461,6 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
         private System.Windows.Forms.ToolStripMenuItem среднееЗначениеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem весВидеоклипаToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem длительностьВидеоклипаToolStripMenuItem3;
+        private System.Windows.Forms.PictureBox pictureBoxWait_GAM;
     }
 }

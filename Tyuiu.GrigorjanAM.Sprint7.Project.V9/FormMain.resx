@@ -120,6 +120,9 @@
   <metadata name="openFileDialogMain_GAM.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 7</value>
   </metadata>
+  <metadata name="toolTipButtons_GAM.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>399, 7</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBoxSort_GAM.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -158,9 +161,6 @@
         QmCC
 </value>
   </data>
-  <metadata name="toolTipButtons_GAM.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>399, 7</value>
-  </metadata>
   <metadata name="menuStripSort_GAM.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>132, 7</value>
   </metadata>
@@ -286,24 +286,24 @@
   </data>
   <data name="buttonLeft_GAM.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAABDklEQVRYR83YsQrCMBSF4Ty4
-        WgUjLvo2Lm5SQR9IXWMuRUPac5vU2vQMf4c7XD4yNBDjnKMODpmCQ6bgkKnms7iMaQ9mesv8ArC6/trB
-        L3Ltxf8qAFd+MLydsbenX1QCWA/t6HEPc3oIjg4YcOcXHTDGkQG7OCIgxpEAdRwBsB8nzQhM46QiQHRD
-        bO9pnNQAJ0k7wbyTmzoFyIGTAJAHJ7WAXDgpAm5qyw7kQwIgF1IB8iAjYOX/3HGW60cdn+CnvJNslsGr
-        amwpoJRGzgyU+pEEQElHkgAljCQCSl0kGVCKkYRAKSCLAPHTRqqCTx/dmyQ36xcVAKJnsvzWYKYHIFpf
-        IHNwyBQcMgWHPDnzBnKa4IneEN+zAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAEOSURBVFhHzdixCsIwFIXhPLhaBSMu+jYublJBH0hd
+        Yy5FQ9pzm9Ta9Ax/hztcPjI0EOOcow4OmYJDpuCQqeazuIxpD2Z6y/wCsLr+2sEvcu3F/yoAV34wvJ2x
+        t6dfVAJYD+3ocQ9zegiODhhw5xcdMMaRAbs4IiDGkQB1HAGwHyfNCEzjpCJAdENs72mc1AAnSTvBvJOb
+        OgXIgZMAkAcntYBcOCkCbmrLDuRDAiAXUgHyICNg5f/ccZbrRx2f4Ke8k2yWwatqbCmglEbODJT6kQRA
+        SUeSACWMJAJKXSQZUIqRhEApIIsA8dNGqoJPH92bJDfrFxUAomey/NZgpgcgWl8gc3DIFBwyBYc8OfMG
+        cprgid4Q37MAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="buttonRight_GAM.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAABEUlEQVRYR83YTQrCMBCG4Rzc
-        X7DiRm/jxl2poAeqbuOMUo3tp50MdDKLt4uB0ocUEkiIMboODj0Fh56CQ0+9HvNa3iyrHZiJ0wHzimF5
-        3lNBkw2wutzCot5SITcb4LFlZBsWzYGiD8uzAZ7uaqQdUIm0BSqQ9sBMZBlgBrIckBMgywK5EWQKjJOF
-        YGmM3FxbOjkGJ843EL1s1Y+V9APkANIXkOsh/QG5BOkbuG4qf8AERzn7xT2cLyDADYFThUBpjHtu1HVF
-        0Qb9KQVOFUZ1/Vi5rrLAERxXDijAcWWAQhxnD8zAcbbATBxnB1TgOBugEsfZAN1ffYATQpoOCK7J/rQC
-        M3FvoOfg0FNw6Ck49FMMD3nE4InkITWiAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAERSURBVFhHzdhNCsIwEIbhHNxfsOJGb+PGXamgB6pu
+        44xSje2nnQx0Mou3i4HShxQSSIgxug4OPQWHnoJDT70e81reLKsdmInTAfOKYXneU0GTDbC63MKi3lIh
+        NxvgsWVkGxbNgaIPy7MBnu5qpB1QibQFKpD2wExkGWAGshyQEyDLArkRZAqMk4VgaYzcXFs6OQYnzjcQ
+        vWzVj5X0A+QA0heQ6yH9AbkE6Ru4bip/wARHOfvFPZwvIMANgVOFQGmMe27UdUXRBv0pBU4VRnX9WLmu
+        ssARHFcOKMBxZYBCHGcPzMBxtsBMHGcHVOA4G6ASx9kA3V99gBNCmg4Irsn+tAIzcW+g5+DQU3DoKTj0
+        UwwPecTgieQhNaIAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="pictureBoxSearch_GAM.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

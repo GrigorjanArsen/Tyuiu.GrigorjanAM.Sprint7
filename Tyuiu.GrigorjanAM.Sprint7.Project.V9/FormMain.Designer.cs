@@ -31,8 +31,8 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.openFileDialogMain_GAM = new System.Windows.Forms.OpenFileDialog();
             this.panelUpper_GAM = new System.Windows.Forms.Panel();
             this.pictureBoxSort_GAM = new System.Windows.Forms.PictureBox();
@@ -76,6 +76,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             this.dataGridViewBase_GAM = new System.Windows.Forms.DataGridView();
             this.saveFileDialogMain_GAM = new System.Windows.Forms.SaveFileDialog();
             this.toolTipButtons_GAM = new System.Windows.Forms.ToolTip(this.components);
+            this.buttonMenu_GAM = new System.Windows.Forms.Button();
             this.panelUpper_GAM.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSort_GAM)).BeginInit();
             this.menuStripSort_GAM.SuspendLayout();
@@ -99,6 +100,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             // panelUpper_GAM
             // 
             this.panelUpper_GAM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.panelUpper_GAM.Controls.Add(this.buttonMenu_GAM);
             this.panelUpper_GAM.Controls.Add(this.pictureBoxSort_GAM);
             this.panelUpper_GAM.Controls.Add(this.buttonReset_GAM);
             this.panelUpper_GAM.Controls.Add(this.menuStripSort_GAM);
@@ -118,9 +120,9 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             // 
             // pictureBoxSort_GAM
             // 
-            this.pictureBoxSort_GAM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBoxSort_GAM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxSort_GAM.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSort_GAM.Image")));
-            this.pictureBoxSort_GAM.Location = new System.Drawing.Point(220, 55);
+            this.pictureBoxSort_GAM.Location = new System.Drawing.Point(557, 55);
             this.pictureBoxSort_GAM.Name = "pictureBoxSort_GAM";
             this.pictureBoxSort_GAM.Size = new System.Drawing.Size(29, 29);
             this.pictureBoxSort_GAM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -147,13 +149,13 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             // 
             // menuStripSort_GAM
             // 
-            this.menuStripSort_GAM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.menuStripSort_GAM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.menuStripSort_GAM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.menuStripSort_GAM.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStripSort_GAM.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemMain_GAM,
             this.поУбываниюToolStripMenuItem});
-            this.menuStripSort_GAM.Location = new System.Drawing.Point(3, 57);
+            this.menuStripSort_GAM.Location = new System.Drawing.Point(589, 59);
             this.menuStripSort_GAM.Name = "menuStripSort_GAM";
             this.menuStripSort_GAM.Size = new System.Drawing.Size(214, 24);
             this.menuStripSort_GAM.TabIndex = 3;
@@ -522,42 +524,42 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             // названиеToolStripMenuItem
             // 
             this.названиеToolStripMenuItem.Name = "названиеToolStripMenuItem";
-            this.названиеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.названиеToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.названиеToolStripMenuItem.Text = "Название";
             this.названиеToolStripMenuItem.Click += new System.EventHandler(this.названиеToolStripMenuItem_Click);
             // 
             // весToolStripMenuItem
             // 
             this.весToolStripMenuItem.Name = "весToolStripMenuItem";
-            this.весToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.весToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.весToolStripMenuItem.Text = "Вес";
             this.весToolStripMenuItem.Click += new System.EventHandler(this.весToolStripMenuItem_Click);
             // 
             // длительностьToolStripMenuItem
             // 
             this.длительностьToolStripMenuItem.Name = "длительностьToolStripMenuItem";
-            this.длительностьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.длительностьToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.длительностьToolStripMenuItem.Text = "Длительность";
             this.длительностьToolStripMenuItem.Click += new System.EventHandler(this.длительностьToolStripMenuItem_Click);
             // 
             // форматToolStripMenuItem
             // 
             this.форматToolStripMenuItem.Name = "форматToolStripMenuItem";
-            this.форматToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.форматToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.форматToolStripMenuItem.Text = "Формат";
             this.форматToolStripMenuItem.Click += new System.EventHandler(this.форматToolStripMenuItem_Click);
             // 
             // категорияToolStripMenuItem
             // 
             this.категорияToolStripMenuItem.Name = "категорияToolStripMenuItem";
-            this.категорияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.категорияToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.категорияToolStripMenuItem.Text = "Категория";
             this.категорияToolStripMenuItem.Click += new System.EventHandler(this.категорияToolStripMenuItem_Click);
             // 
             // iDToolStripMenuItem
             // 
             this.iDToolStripMenuItem.Name = "iDToolStripMenuItem";
-            this.iDToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.iDToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.iDToolStripMenuItem.Text = "ID";
             this.iDToolStripMenuItem.Click += new System.EventHandler(this.iDToolStripMenuItem_Click);
             // 
@@ -590,24 +592,24 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             this.dataGridViewBase_GAM.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dataGridViewBase_GAM.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridViewBase_GAM.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewBase_GAM.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewBase_GAM.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewBase_GAM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewBase_GAM.ColumnHeadersVisible = false;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewBase_GAM.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewBase_GAM.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewBase_GAM.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewBase_GAM.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dataGridViewBase_GAM.Location = new System.Drawing.Point(3, 16);
@@ -620,6 +622,22 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             // 
             this.toolTipButtons_GAM.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTipButtons_GAM.ToolTipTitle = "Подсказка";
+            // 
+            // buttonMenu_GAM
+            // 
+            this.buttonMenu_GAM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.buttonMenu_GAM.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonMenu_GAM.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonMenu_GAM.Location = new System.Drawing.Point(5, 46);
+            this.buttonMenu_GAM.Name = "buttonMenu_GAM";
+            this.buttonMenu_GAM.Size = new System.Drawing.Size(132, 34);
+            this.buttonMenu_GAM.TabIndex = 6;
+            this.buttonMenu_GAM.Text = "Главное меню";
+            this.toolTipButtons_GAM.SetToolTip(this.buttonMenu_GAM, "Вернуться в главное меню");
+            this.buttonMenu_GAM.UseVisualStyleBackColor = false;
+            this.buttonMenu_GAM.Click += new System.EventHandler(this.buttonMenu_GAM_Click);
+            this.buttonMenu_GAM.MouseEnter += new System.EventHandler(this.buttonMenu_GAM_MouseEnter);
+            this.buttonMenu_GAM.MouseLeave += new System.EventHandler(this.buttonMenu_GAM_MouseLeave);
             // 
             // FormMain
             // 
@@ -634,6 +652,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Каталог видеоклипов";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelUpper_GAM.ResumeLayout(false);
             this.panelUpper_GAM.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSort_GAM)).EndInit();
@@ -700,6 +719,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
         private System.Windows.Forms.ToolStripMenuItem форматToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem категорияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem iDToolStripMenuItem;
+        private System.Windows.Forms.Button buttonMenu_GAM;
     }
 }
 

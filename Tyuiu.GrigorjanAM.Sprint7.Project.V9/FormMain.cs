@@ -569,5 +569,25 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             buttonGraph_GAM.BackColor = Color.FromArgb(40, 40, 40);
             buttonGraph_GAM.ForeColor = Color.WhiteSmoke;
         }
+
+        private void buttonMenu_GAM_Click(object sender, EventArgs e)
+        {
+            FormMenu fmen = new FormMenu();
+            
+            fmen.TopMost = true;
+            fmen.ShowDialog();
+        }
+
+        private void buttonMenu_GAM_MouseEnter(object sender, EventArgs e)
+        {
+            buttonMenu_GAM.BackColor = Color.DarkTurquoise;
+            buttonMenu_GAM.ForeColor = Color.Black;
+        }
+
+        private void buttonMenu_GAM_MouseLeave(object sender, EventArgs e)
+        {
+            buttonMenu_GAM.BackColor = Color.FromArgb(40, 40, 40);
+            buttonMenu_GAM.ForeColor = Color.WhiteSmoke;
+        }
     }
     }

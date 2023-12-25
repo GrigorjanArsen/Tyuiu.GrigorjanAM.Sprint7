@@ -40,6 +40,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
 
         private void форматВидеоклипаToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pictureBoxWait_GAM.Visible = false;
             chartGraph_GAM.Titles.Clear();
             chartGraph_GAM.Series.Clear();
             matrix = ds.LoadDataSet(path);
@@ -83,6 +84,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
 
         private void категорияВидеоклипаToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pictureBoxWait_GAM.Visible = false;
             chartGraph_GAM.Titles.Clear();
             chartGraph_GAM.Series.Clear();
             matrix = ds.LoadDataSet(path);
@@ -126,6 +128,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
 
         private void весВидеоклипаToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pictureBoxWait_GAM.Visible = false;
             chartGraph_GAM.Titles.Clear();
             chartGraph_GAM.Series.Clear();
             matrix = ds.LoadDataSet(path);
@@ -168,6 +171,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
         }
         private void длительностьВидеоклипаToolStripMenuItem2_Click(object sender, EventArgs e)
         {
+            pictureBoxWait_GAM.Visible = false;
             chartGraph_GAM.Titles.Clear();
             chartGraph_GAM.Series.Clear();
             matrix = ds.LoadDataSet(path);
@@ -217,6 +221,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
 
         private void весВидеоклипаToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            
             matrix = ds.LoadDataSet(path);
             rows = matrix.GetLength(0);
             columns = matrix.GetLength(1);
@@ -243,6 +248,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
 
         private void длительностьВидеоклипаToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
             matrix = ds.LoadDataSet(path);
             rows = matrix.GetLength(0);
             columns = matrix.GetLength(1);
