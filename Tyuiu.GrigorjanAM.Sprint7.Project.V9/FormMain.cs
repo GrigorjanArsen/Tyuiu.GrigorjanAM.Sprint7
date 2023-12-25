@@ -25,7 +25,8 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
         }
         
         DataService ds = new DataService();
-        string path = @"C:\Users\djura\Desktop\DataSet.csv";
+        string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "DataSet.csv");
+        //string path = @"C:\Users\djura\Desktop\DataSet.csv";
         static string openFile;
         static int rows;
         static int columns;

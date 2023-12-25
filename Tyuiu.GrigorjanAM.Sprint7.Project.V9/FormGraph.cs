@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tyuiu.GrigorjanAM.Sprint7.Project.V9.Lib;
 using System.Windows.Forms.DataVisualization.Charting;
-
+using System.IO;
 namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
 {
     public partial class FormGraph : Form
@@ -20,8 +20,9 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
         }
 
         DataService ds = new DataService();
-        string path = @"C:\Users\djura\Desktop\DataSet.csv";
+        string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "DataSet.csv");
 
+        static string openFile;
         static int rows;
         static int columns;
         static string[,] matrix;
