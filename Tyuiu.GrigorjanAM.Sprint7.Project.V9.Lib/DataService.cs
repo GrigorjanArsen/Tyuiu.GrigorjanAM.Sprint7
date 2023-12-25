@@ -23,72 +23,70 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9.Lib
             }
             return basa;
         }
-        public string[,] SortMax(string[,] matrix, int NumberColumn)
+        public string[,] SortUbyv(string[,] basa, int column)
         {
-            int[] Entrance = new int[matrix.GetLength(0) - 1];
-            Entrance[Entrance.Length - 1] = Convert.ToInt32(matrix[matrix.GetLength(0) - 1, NumberColumn]);
-            for (int i = 0; i < Entrance.Length - 1; i++)
+            int[] door = new int[basa.GetLength(0) - 1];
+            door[door.Length - 1] = Convert.ToInt32(basa[basa.GetLength(0) - 1, column]);
+            for (int i = 0; i < door.Length - 1; i++)
             {
-                Entrance[i] = Convert.ToInt32(matrix[i + 1, NumberColumn]);
+                door[i] = Convert.ToInt32(basa[i + 1, column]);
             }
 
-            Array.Sort(Entrance, (x, y) => y.CompareTo(x));
+            Array.Sort(door, (x, y) => y.CompareTo(x));
 
-            string[,] SortMatrix = new string[matrix.GetLength(0), matrix.GetLength(1)];
+            string[,] SortedBasa = new string[basa.GetLength(0), basa.GetLength(1)];
 
-            for (int i = 0; i < SortMatrix.GetLength(1); i++)
+            for (int i = 0; i < SortedBasa.GetLength(1); i++)
             {
-                SortMatrix[0, i] = matrix[0, i];
+                SortedBasa[0, i] = basa[0, i];
             }
 
-            for (int i = 0; i < SortMatrix.GetLength(0) - 1; i++)
+            for (int i = 0; i < SortedBasa.GetLength(0) - 1; i++)
             {
-                for (int j = 1; j < matrix.GetLength(0); j++)
+                for (int j = 1; j < basa.GetLength(0); j++)
                 {
-                    if (Entrance[i] == Convert.ToInt32(matrix[j, NumberColumn]))
+                    if (door[i] == Convert.ToInt32(basa[j, column]))
                     {
-                        for (int c = 0; c < SortMatrix.GetLength(1); c++)
+                        for (int c = 0; c < SortedBasa.GetLength(1); c++)
                         {
-                            SortMatrix[i + 1, c] = matrix[j, c];
+                            SortedBasa[i + 1, c] = basa[j, c];
                         }
-                        matrix[j, NumberColumn] = "-1";
+                        basa[j, column] = "-1";
                         break;
                     }
                 }
             }
-            return SortMatrix;
+            return SortedBasa;
         }
 
 
-        public string[,] SortVozr(string[,] matrix, int NumberColumn)
+        public string[,] SortVozr(string[,] basa, int column)
         {
-            int[] input = new int[matrix.GetLength(0) - 1];
-            input[input.Length - 1] = Convert.ToInt32(matrix[matrix.GetLength(0) - 1, NumberColumn]);
+            int[] input = new int[basa.GetLength(0) - 1];
+            input[input.Length - 1] = Convert.ToInt32(basa[basa.GetLength(0) - 1, column]);
             for (int i = 0; i < input.Length - 1; i++)
             {
-                input[i] = Convert.ToInt32(matrix[i + 1, NumberColumn]);
+                input[i] = Convert.ToInt32(basa[i + 1, column]);
             }
-
             Array.Sort(input, (x, y) => x.CompareTo(y));
-
-            string[,] sortedmx = new string[matrix.GetLength(0), matrix.GetLength(1)];
+            string[,] sortedmx = new string[basa.GetLength(0), basa.GetLength(1)];
 
             for (int i = 0; i < sortedmx.GetLength(1); i++)
             {
-                sortedmx[0, i] = matrix[0, i];
+                sortedmx[0, i] = basa[0, i];
             }
 
             for (int i = 0; i < sortedmx.GetLength(0) - 1; i++)
             {
-                for (int j = 1; j < matrix.GetLength(0); j++)
+                for (int j = 1; j < basa.GetLength(0); j++)
                 {
-                    if (input[i] == Convert.ToInt32(matrix[j, NumberColumn]))
+                    if (input[i] == Convert.ToInt32(basa[j, column]))
                     {
                         for (int c = 0; c < sortedmx.GetLength(1); c++)
                         {
-                            sortedmx[i + 1, c] = matrix[j, c];
+                            sortedmx[i + 1, c] = basa[j, c];
                         }
-                        matrix[j, NumberColumn] = "-1";
+                        basa[j, column] = "-1";
                         break;
                     }
                 }

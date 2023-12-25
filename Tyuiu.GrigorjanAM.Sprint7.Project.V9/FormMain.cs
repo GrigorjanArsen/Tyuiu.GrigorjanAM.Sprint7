@@ -220,7 +220,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
         private void столбецДлительностьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string[,] mx = ds.LoadDataSet(path);
-            string[,] mxsort = ds.SortMax(mx, 2);
+            string[,] mxsort = ds.SortUbyv(mx, 2);
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < columns; j++)
@@ -233,7 +233,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
         private void столбецВесToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             string[,] mx = ds.LoadDataSet(path);
-            string[,] mxsort = ds.SortMax(mx, 5);
+            string[,] mxsort = ds.SortUbyv(mx, 5);
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < columns; j++)
@@ -246,7 +246,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
         private void столбецДатаToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             string[,] mx = ds.LoadDataSet(path);
-            string[,] mxsort = ds.SortMax(mx, 0);
+            string[,] mxsort = ds.SortUbyv(mx, 0);
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < columns; j++)
@@ -427,7 +427,10 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
         private void buttonGraph_GAM_Click(object sender, EventArgs e)
         {
             FormGraph fg = new FormGraph();
-            fg.ShowDialog();
+
+            fg.Show();
+           
+            
         }
 
         private void названиеToolStripMenuItem_Click(object sender, EventArgs e)
@@ -440,11 +443,15 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
                     if (!(matrix[i, 1].ToLower().Contains(filtervalue)))
                     {
                         dataGridViewBase_GAM.Rows[i].Visible = false;
+                        //dataGridViewBase_GAM.Rows.RemoveAt(i);
+                        
                     }
 
 
                 }
+                //dataGridViewBase_GAM.Rows.RemoveAt(rows);
                 dataGridViewBase_GAM.Rows[rows].Visible = false;
+                
             }
             catch
             {

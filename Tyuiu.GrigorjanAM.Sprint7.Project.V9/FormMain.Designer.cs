@@ -35,6 +35,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.openFileDialogMain_GAM = new System.Windows.Forms.OpenFileDialog();
             this.panelUpper_GAM = new System.Windows.Forms.Panel();
+            this.buttonMenu_GAM = new System.Windows.Forms.Button();
             this.pictureBoxSort_GAM = new System.Windows.Forms.PictureBox();
             this.buttonReset_GAM = new System.Windows.Forms.Button();
             this.menuStripSort_GAM = new System.Windows.Forms.MenuStrip();
@@ -76,7 +77,6 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             this.dataGridViewBase_GAM = new System.Windows.Forms.DataGridView();
             this.saveFileDialogMain_GAM = new System.Windows.Forms.SaveFileDialog();
             this.toolTipButtons_GAM = new System.Windows.Forms.ToolTip(this.components);
-            this.buttonMenu_GAM = new System.Windows.Forms.Button();
             this.panelUpper_GAM.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSort_GAM)).BeginInit();
             this.menuStripSort_GAM.SuspendLayout();
@@ -117,6 +117,22 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             this.panelUpper_GAM.Name = "panelUpper_GAM";
             this.panelUpper_GAM.Size = new System.Drawing.Size(804, 84);
             this.panelUpper_GAM.TabIndex = 0;
+            // 
+            // buttonMenu_GAM
+            // 
+            this.buttonMenu_GAM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.buttonMenu_GAM.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonMenu_GAM.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonMenu_GAM.Location = new System.Drawing.Point(5, 46);
+            this.buttonMenu_GAM.Name = "buttonMenu_GAM";
+            this.buttonMenu_GAM.Size = new System.Drawing.Size(132, 34);
+            this.buttonMenu_GAM.TabIndex = 6;
+            this.buttonMenu_GAM.Text = "Главное меню";
+            this.toolTipButtons_GAM.SetToolTip(this.buttonMenu_GAM, "Вернуться в главное меню");
+            this.buttonMenu_GAM.UseVisualStyleBackColor = false;
+            this.buttonMenu_GAM.Click += new System.EventHandler(this.buttonMenu_GAM_Click);
+            this.buttonMenu_GAM.MouseEnter += new System.EventHandler(this.buttonMenu_GAM_MouseEnter);
+            this.buttonMenu_GAM.MouseLeave += new System.EventHandler(this.buttonMenu_GAM_MouseLeave);
             // 
             // pictureBoxSort_GAM
             // 
@@ -605,7 +621,7 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -622,22 +638,6 @@ namespace Tyuiu.GrigorjanAM.Sprint7.Project.V9
             // 
             this.toolTipButtons_GAM.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTipButtons_GAM.ToolTipTitle = "Подсказка";
-            // 
-            // buttonMenu_GAM
-            // 
-            this.buttonMenu_GAM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.buttonMenu_GAM.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonMenu_GAM.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonMenu_GAM.Location = new System.Drawing.Point(5, 46);
-            this.buttonMenu_GAM.Name = "buttonMenu_GAM";
-            this.buttonMenu_GAM.Size = new System.Drawing.Size(132, 34);
-            this.buttonMenu_GAM.TabIndex = 6;
-            this.buttonMenu_GAM.Text = "Главное меню";
-            this.toolTipButtons_GAM.SetToolTip(this.buttonMenu_GAM, "Вернуться в главное меню");
-            this.buttonMenu_GAM.UseVisualStyleBackColor = false;
-            this.buttonMenu_GAM.Click += new System.EventHandler(this.buttonMenu_GAM_Click);
-            this.buttonMenu_GAM.MouseEnter += new System.EventHandler(this.buttonMenu_GAM_MouseEnter);
-            this.buttonMenu_GAM.MouseLeave += new System.EventHandler(this.buttonMenu_GAM_MouseLeave);
             // 
             // FormMain
             // 
